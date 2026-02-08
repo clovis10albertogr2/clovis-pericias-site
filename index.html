@@ -60,7 +60,7 @@
   }
   </script>
 
-  <!-- Fonts: Montserrat + Inter -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -130,13 +130,13 @@
           <h1 class="hero__title">Suporte Técnico <span class="gradient-text">Incontestável</span> para Decisões Críticas</h1>
           <p class="hero__lead">Atuação técnica de alto nível baseada em evidências sólidas, rigor normativo (ISO/NR) e documentação integralmente rastreável. Provendo a clareza técnica indispensável para o convencimento jurídico e segurança estratégica.</p>
           
+          <!-- AJUSTE #2: Botão e credenciais no mesmo nível (layout horizontal) -->
           <div class="hero__actions">
             <a href="#contato" class="btn btn--primary">Solicitar Triagem Técnica</a>
-          </div>
-          
-          <div class="hero__credentials">
-            <span>CREA-PA 1523383151</span>
-            <span>NFS-e (ISS) Belém/PA</span>
+            <div class="hero__credentials">
+              <span>CREA-PA 1523383151</span>
+              <span>NFS-e (ISS) Belém/PA</span>
+            </div>
           </div>
         </div>
 
@@ -148,11 +148,13 @@
             <div class="profile-info">
               <h2>Clovis Alberto Galvão Ribeiro</h2>
               <p>Engenheiro de Computação & Segurança do Trabalho</p>
+              
+              <!-- AJUSTE #1: Badges com bordas visíveis (estilo original) -->
               <div class="profile-certifications">
                 <span>AUDITOR LÍDER ISO 9001</span>
                 <span>AUDITOR LÍDER ISO 14001</span>
                 <span>AUDITOR LÍDER ISO 45001</span>
-                <span>AUDITOR LÍDER ISO 27001/27701</span>
+                <span>AUDITOR LÍDER ISO 27001 E 27701</span>
               </div>
             </div>
           </div>
@@ -206,9 +208,11 @@
       <div class="container">
         <header class="section-header">
           <h2 class="section-title">Especialidades & Entregáveis</h2>
+          <!-- AJUSTE #4: Subtítulo centralizado -->
           <p class="section-subtitle section-subtitle--centered">Suporte técnico de alto nível para escritórios de advocacia e departamentos jurídicos.</p>
         </header>
 
+        <!-- AJUSTE #3: Grid 3 colunas (primeira linha) + 1 centralizado (segunda linha) -->
         <div class="services-grid">
           <article class="service-card service-card--featured">
             <div class="service-badge">Principal</div>
@@ -242,7 +246,8 @@
             </ul>
           </article>
 
-          <article class="service-card">
+          <!-- Card centralizado na segunda linha -->
+          <article class="service-card service-card--centered">
             <div class="service-icon">📋</div>
             <h3>Auditoria TI & SST</h3>
             <p>Avaliação sistemática de processos, controles e conformidade normativa para identificação de não conformidades e oportunidades de melhoria.</p>
@@ -261,7 +266,8 @@
       <div class="container">
         <header class="section-header">
           <h2 class="section-title">Fluxo de Atuação Técnica</h2>
-          <p class="section-subtitle">Método estruturado em 3 etapas para garantir máxima eficácia técnica e jurídica.</p>
+          <!-- AJUSTE #5: Subtítulo centralizado -->
+          <p class="section-subtitle section-subtitle--centered">Método estruturado em 3 etapas para garantir máxima eficácia técnica e jurídica.</p>
         </header>
         
         <div class="timeline">
@@ -315,9 +321,11 @@
       <div class="container">
         <header class="section-header">
           <h2 class="section-title">Perguntas Frequentes</h2>
-          <p class="section-subtitle">Esclarecimentos técnicos sobre assistência judicial, perícias e consultoria especializada.</p>
+          <!-- AJUSTE #6: Subtítulo centralizado -->
+          <p class="section-subtitle section-subtitle--centered">Esclarecimentos técnicos sobre assistência judicial, perícias e consultoria especializada.</p>
         </header>
         
+        <!-- AJUSTE #7: Maior espaçamento entre itens + fonte maior nas perguntas -->
         <div class="faq-list">
           <article class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
@@ -501,10 +509,8 @@
   </footer>
 
   <script>
-    // Ano dinâmico
     document.getElementById('year').textContent = new Date().getFullYear();
     
-    // Formulário WhatsApp
     document.getElementById('leadForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const nome = document.getElementById('nome').value;
@@ -517,7 +523,6 @@
       window.open(`https://wa.me/5591992879843?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     });
 
-    // Menu Mobile
     const mobileToggle = document.getElementById('mobileMenuToggle');
     const mainNav = document.getElementById('mainNav');
     
@@ -536,7 +541,6 @@
       });
     });
 
-    // FAQ Accordion
     document.querySelectorAll('.faq-trigger').forEach(button => {
       button.addEventListener('click', () => {
         const faqItem = button.parentElement;
@@ -554,7 +558,6 @@
       });
     });
 
-    // Scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
