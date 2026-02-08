@@ -446,7 +446,8 @@
             </div>
           </div>
 
-          <form class="contact-form" id="leadForm">
+          <!-- FORMULÁRIO MODERNIZADO -->
+          <form class="contact-form" id="cta-whatsapp-form">
             <div class="form-group">
               <label for="nome">Nome Completo / Escritório</label>
               <input type="text" id="nome" name="nome" placeholder="Dr. João Silva ou Silva & Associados" required>
@@ -502,7 +503,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     
-    document.getElementById('leadForm').addEventListener('submit', (e) => {
+    document.getElementById('cta-whatsapp-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const nome = document.getElementById('nome').value;
       const email = document.getElementById('email').value;
