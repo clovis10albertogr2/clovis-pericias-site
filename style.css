@@ -277,7 +277,7 @@ button {
    =================================== */
 
 .hero {
-  padding: 100px 0;
+  padding: 100px 0 60px 0; /* ALTERAÇÃO #2: Padding inferior reduzido de 100px para 60px */
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -312,22 +312,38 @@ button {
   color: var(--text-white);
 }
 
-/* EFEITO GRADIENTE ANIMADO */
+/* ALTERAÇÃO #4: EFEITO ELEGANTE E SÓBRIO RESTAURADO */
 .gradient-text {
-  background: linear-gradient(90deg, #ffffff 0%, var(--blue-light) 50%, var(--blue-royal) 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, #ffffff 0%, var(--blue-light) 40%, var(--blue-royal) 80%, #1e3a8a 100%);
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 4s ease-in-out infinite;
+  animation: gradient-elegant 6s ease-in-out infinite;
+  position: relative;
+  display: inline-block;
 }
 
-@keyframes gradient-shift {
+/* Sombra sutil para destaque */
+.gradient-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(37,99,235,0.15) 50%, rgba(30,58,138,0.2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: blur(8px);
+}
+
+@keyframes gradient-elegant {
   0%, 100% {
-    background-position: 0% center;
+    background-position: 0% 50%;
   }
   50% {
-    background-position: 100% center;
+    background-position: 100% 50%;
   }
 }
 
@@ -339,7 +355,6 @@ button {
   margin: 0 auto 40px;
 }
 
-/* AJUSTE #2: Botão e credenciais lado a lado (como na imagem) */
 .hero__actions {
   display: flex;
   align-items: center;
@@ -388,12 +403,14 @@ button {
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
+  padding: 20px 20px 0 20px; /* ALTERAÇÃO #1: Padding adicionado para não cortar o topo */
 }
 
 .profile-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* ALTERAÇÃO #1: Mudado de 'cover' para 'contain' */
+  object-position: center bottom; /* ALTERAÇÃO #1: Posicionamento para não cortar o topo */
 }
 
 .profile-info {
@@ -416,7 +433,6 @@ button {
   font-weight: 500;
 }
 
-/* AJUSTE #1: Badges com bordas bem visíveis (estilo original restaurado) */
 .profile-certifications {
   display: flex;
   flex-wrap: wrap;
@@ -449,7 +465,7 @@ button {
    =================================== */
 
 .section {
-  padding: 100px 0;
+  padding: 60px 0; /* ALTERAÇÃO #2: Reduzido de 100px para 60px */
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -476,7 +492,6 @@ button {
   margin: 0 auto;
 }
 
-/* AJUSTES #4, #5, #6: Todos os subtítulos centralizados */
 .section-subtitle--centered {
   text-align: center !important;
 }
@@ -570,7 +585,6 @@ button {
    SERVIÇOS
    =================================== */
 
-/* AJUSTE #3: Grid 3 colunas + 1 card centralizado na segunda linha */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -599,7 +613,6 @@ button {
   border-color: var(--blue-navy);
 }
 
-/* Card centralizado na segunda linha */
 .service-card--centered {
   grid-column: 2 / 3;
 }
@@ -745,7 +758,7 @@ button {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 24px; /* AJUSTE #7: Maior espaçamento entre items */
+  gap: 24px;
 }
 
 .faq-item {
@@ -765,7 +778,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px; /* AJUSTE #7: Mais padding */
+  padding: 32px;
   background: none;
   color: var(--text-white);
   text-align: left;
@@ -773,14 +786,14 @@ button {
 }
 
 .faq-question {
-  font-size: 19px; /* AJUSTE #7: Fonte maior */
+  font-size: 19px;
   font-weight: 600;
   color: var(--text-white);
   line-height: 1.4;
 }
 
 .faq-toggle {
-  font-size: 28px; /* AJUSTE #7: Ícone maior */
+  font-size: 28px;
   color: var(--blue-royal);
   font-weight: 300;
   transition: var(--transition);
@@ -1043,7 +1056,11 @@ button {
   }
   
   .section {
-    padding: 80px 0;
+    padding: 50px 0; /* ALTERAÇÃO #2: Reduzido também no mobile */
+  }
+  
+  .hero {
+    padding: 60px 0 40px 0; /* ALTERAÇÃO #2: Ajustado no mobile */
   }
   
   /* Mobile Menu */
@@ -1105,11 +1122,6 @@ button {
   }
   
   /* Hero */
-  .hero {
-    padding: 60px 0;
-    min-height: auto;
-  }
-  
   .hero__title {
     font-size: 32px;
   }
@@ -1181,15 +1193,16 @@ button {
   .trust-item {
     font-size: 11px;
   }
+  
+  /* Profile */
+  .profile-image {
+    height: 320px;
+  }
 }
 
 @media (max-width: 480px) {
   .section-title {
     font-size: 28px;
-  }
-  
-  .profile-image {
-    height: 320px;
   }
   
   .btn {
