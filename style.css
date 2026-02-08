@@ -277,7 +277,7 @@ button {
    =================================== */
 
 .hero {
-  padding: 100px 0 60px 0;
+  padding: 40px 0 60px 0;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -288,6 +288,7 @@ button {
   grid-template-columns: 1fr 0.9fr;
   gap: 80px;
   align-items: center;
+  margin-top: -20px;
 }
 
 .hero__content {
@@ -312,7 +313,6 @@ button {
   color: var(--text-white);
 }
 
-/* EFEITO ELEGANTE E SÓBRIO */
 .gradient-text {
   background: linear-gradient(135deg, #ffffff 0%, var(--blue-light) 40%, var(--blue-royal) 80%, #1e3a8a 100%);
   background-size: 300% 300%;
@@ -368,17 +368,16 @@ button {
 }
 
 /* ===================================
-   PROFILE CARD - AJUSTES CIRÚRGICOS
+   PROFILE CARD
    =================================== */
 
-/* AJUSTE #2: Card redimensionado e compacto */
 .profile-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   overflow: hidden;
   transition: var(--transition-slow);
-  max-width: 380px; /* Largura otimizada */
+  max-width: 380px;
   margin: 0 auto;
 }
 
@@ -388,9 +387,8 @@ button {
   box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
 }
 
-/* AJUSTE #1: Imagem com object-fit: cover + posicionamento para não cortar o topo */
 .profile-image {
-  height: 380px; /* Altura reduzida */
+  height: 380px;
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-dark) 100%);
   display: flex;
   align-items: flex-end;
@@ -402,19 +400,18 @@ button {
 .profile-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* AJUSTE #1: cover para preencher sem bordas pretas */
-  object-position: center 15%; /* AJUSTE #1: posição ajustada para não cortar o topo do cabelo */
+  object-fit: cover;
+  object-position: center 15%;
 }
 
-/* AJUSTE #2 e #3: Info redimensionada e alinhada perfeitamente */
 .profile-info {
-  padding: 20px; /* Padding reduzido */
+  padding: 20px;
   text-align: center;
   border-top: 1px solid var(--border-subtle);
 }
 
 .profile-info h2 {
-  font-size: 16px; /* AJUSTE #2: Fonte reduzida */
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-white);
   margin-bottom: 4px;
@@ -422,29 +419,28 @@ button {
 }
 
 .profile-info p {
-  font-size: 12px; /* AJUSTE #2: Fonte reduzida */
+  font-size: 12px;
   color: var(--blue-royal);
-  margin-bottom: 14px; /* Espaço reduzido */
+  margin-bottom: 14px;
   font-weight: 500;
   line-height: 1.4;
 }
 
-/* AJUSTE #2 e #3: Badges compactas e perfeitamente alinhadas */
 .profile-certifications {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px; /* Gap reduzido */
+  gap: 6px;
   justify-content: center;
   margin-top: 0;
-  padding: 0; /* AJUSTE #3: Sem padding extra */
+  padding: 0;
 }
 
 .profile-certifications span {
-  font-size: 8px; /* AJUSTE #2: Fonte menor */
+  font-size: 8px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  padding: 5px 10px; /* AJUSTE #2: Padding reduzido */
+  padding: 5px 10px;
   background: rgba(37, 99, 235, 0.08);
   border: 1.5px solid var(--blue-royal);
   color: var(--blue-royal);
@@ -1059,7 +1055,11 @@ button {
   }
   
   .hero {
-    padding: 60px 0 40px 0;
+    padding: 30px 0 40px 0;
+  }
+  
+  .hero__grid {
+    margin-top: -10px;
   }
   
   /* Mobile Menu */
