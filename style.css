@@ -277,7 +277,7 @@ button {
    =================================== */
 
 .hero {
-  padding: 100px 0 60px 0; /* ALTERAÇÃO #2: Padding inferior reduzido de 100px para 60px */
+  padding: 100px 0 60px 0;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -312,7 +312,7 @@ button {
   color: var(--text-white);
 }
 
-/* ALTERAÇÃO #4: EFEITO ELEGANTE E SÓBRIO RESTAURADO */
+/* EFEITO ELEGANTE E SÓBRIO */
 .gradient-text {
   background: linear-gradient(135deg, #ffffff 0%, var(--blue-light) 40%, var(--blue-royal) 80%, #1e3a8a 100%);
   background-size: 300% 300%;
@@ -322,20 +322,6 @@ button {
   animation: gradient-elegant 6s ease-in-out infinite;
   position: relative;
   display: inline-block;
-}
-
-/* Sombra sutil para destaque */
-.gradient-text::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(37,99,235,0.15) 50%, rgba(30,58,138,0.2) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: blur(8px);
 }
 
 @keyframes gradient-elegant {
@@ -381,13 +367,19 @@ button {
   line-height: 1.4;
 }
 
-/* Profile Card */
+/* ===================================
+   PROFILE CARD - AJUSTES CIRÚRGICOS
+   =================================== */
+
+/* AJUSTE #2: Card redimensionado e compacto */
 .profile-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   overflow: hidden;
   transition: var(--transition-slow);
+  max-width: 380px; /* Largura otimizada */
+  margin: 0 auto;
 }
 
 .profile-card:hover {
@@ -396,62 +388,69 @@ button {
   box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
 }
 
+/* AJUSTE #1: Imagem com object-fit: cover + posicionamento para não cortar o topo */
 .profile-image {
-  height: 420px;
+  height: 380px; /* Altura reduzida */
   background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-dark) 100%);
   display: flex;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
-  padding: 20px 20px 0 20px; /* ALTERAÇÃO #1: Padding adicionado para não cortar o topo */
+  position: relative;
 }
 
 .profile-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* ALTERAÇÃO #1: Mudado de 'cover' para 'contain' */
-  object-position: center bottom; /* ALTERAÇÃO #1: Posicionamento para não cortar o topo */
+  object-fit: cover; /* AJUSTE #1: cover para preencher sem bordas pretas */
+  object-position: center 15%; /* AJUSTE #1: posição ajustada para não cortar o topo do cabelo */
 }
 
+/* AJUSTE #2 e #3: Info redimensionada e alinhada perfeitamente */
 .profile-info {
-  padding: 32px;
+  padding: 20px; /* Padding reduzido */
   text-align: center;
   border-top: 1px solid var(--border-subtle);
 }
 
 .profile-info h2 {
-  font-size: 19px;
+  font-size: 16px; /* AJUSTE #2: Fonte reduzida */
   font-weight: 700;
   color: var(--text-white);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  line-height: 1.3;
 }
 
 .profile-info p {
-  font-size: 14px;
+  font-size: 12px; /* AJUSTE #2: Fonte reduzida */
   color: var(--blue-royal);
-  margin-bottom: 20px;
+  margin-bottom: 14px; /* Espaço reduzido */
   font-weight: 500;
+  line-height: 1.4;
 }
 
+/* AJUSTE #2 e #3: Badges compactas e perfeitamente alinhadas */
 .profile-certifications {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px; /* Gap reduzido */
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 0;
+  padding: 0; /* AJUSTE #3: Sem padding extra */
 }
 
 .profile-certifications span {
-  font-size: 10px;
+  font-size: 8px; /* AJUSTE #2: Fonte menor */
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 8px 14px;
+  letter-spacing: 0.03em;
+  padding: 5px 10px; /* AJUSTE #2: Padding reduzido */
   background: rgba(37, 99, 235, 0.08);
   border: 1.5px solid var(--blue-royal);
   color: var(--blue-royal);
-  border-radius: 6px;
+  border-radius: 4px;
   transition: var(--transition);
+  line-height: 1.2;
 }
 
 .profile-certifications span:hover {
@@ -465,7 +464,7 @@ button {
    =================================== */
 
 .section {
-  padding: 60px 0; /* ALTERAÇÃO #2: Reduzido de 100px para 60px */
+  padding: 60px 0;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -1056,11 +1055,11 @@ button {
   }
   
   .section {
-    padding: 50px 0; /* ALTERAÇÃO #2: Reduzido também no mobile */
+    padding: 50px 0;
   }
   
   .hero {
-    padding: 60px 0 40px 0; /* ALTERAÇÃO #2: Ajustado no mobile */
+    padding: 60px 0 40px 0;
   }
   
   /* Mobile Menu */
@@ -1143,6 +1142,15 @@ button {
     text-align: center;
   }
   
+  /* Profile Card Mobile */
+  .profile-card {
+    max-width: 100%;
+  }
+  
+  .profile-image {
+    height: 300px;
+  }
+  
   /* Services */
   .services-grid {
     grid-template-columns: 1fr;
@@ -1193,11 +1201,6 @@ button {
   .trust-item {
     font-size: 11px;
   }
-  
-  /* Profile */
-  .profile-image {
-    height: 320px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -1211,7 +1214,15 @@ button {
   }
   
   .profile-certifications span {
-    font-size: 9px;
-    padding: 6px 10px;
+    font-size: 7px;
+    padding: 4px 8px;
+  }
+  
+  .profile-info h2 {
+    font-size: 14px;
+  }
+  
+  .profile-info p {
+    font-size: 11px;
   }
 }
