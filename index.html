@@ -1,493 +1,143 @@
-<!doctype html>
-<html lang="pt-BR" dir="ltr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+/* ===================================
+   VARIÁVEIS E RESET
+   =================================== */
+
+:root {
+  /* Cores principais */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-dark: #050505;
   
-  <title>Clovis Ribeiro | Engenharia Forense, TI & Segurança do Trabalho</title>
-  <meta name="description" content="Assistência Técnica especializada com rigor metodológico. Engenharia de Computação e Segurança do Trabalho. CREA-PA 1523383151." />
-  <meta name="keywords" content="perícia judicial, assistência técnica, engenharia forense, ISO 27001, LGPD, segurança do trabalho, Belém PA" />
-  <meta name="author" content="Clovis Alberto Galvão Ribeiro" />
-  <meta name="robots" content="index, follow" />
+  /* Azuis */
+  --blue-navy: #1e3a8a;
+  --blue-royal: #2563eb;
+  --blue-light: #3b82f6;
   
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="canonical" href="https://www.clovisribeiro.com" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.clovisribeiro.com" />
-  <meta property="og:title" content="Clovis Ribeiro | Engenharia Forense, TI & SST" />
-  <meta property="og:description" content="Suporte técnico especializado para decisões jurídicas críticas. Belém/PA • Nacional." />
-  <meta property="og:image" content="https://www.clovisribeiro.com/assets/ClovisProfissional.png" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://www.clovisribeiro.com" />
-  <meta property="twitter:title" content="Clovis Ribeiro | Engenharia Forense, TI & SST" />
-  <meta property="twitter:description" content="Suporte técnico especializado para decisões jurídicas críticas." />
-  <meta property="twitter:image" content="https://www.clovisribeiro.com/assets/ClovisProfissional.png" />
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Clovis Alberto Galvão Ribeiro - Engenharia Forense",
-    "image": "https://www.clovisribeiro.com/assets/ClovisProfissional.png",
-    "description": "Assistência Técnica Judicial, Perícia Extrajudicial e Consultoria em TI & Segurança do Trabalho",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Belém",
-      "addressRegion": "PA",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -1.4558,
-      "longitude": -48.4902
-    },
-    "url": "https://www.clovisribeiro.com",
-    "telephone": "+55-91-99287-9843",
-    "email": "contato@clovisribeiro.com",
-    "priceRange": "$$",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "18:00"
-    }
-  }
-  </script>
-
-  <!-- Fonts: Montserrat + Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  /* Textos */
+  --text-white: #ffffff;
+  --text-light: #e0e0e0;
+  --text-gray: #a1a1aa;
+  --text-dim: #71717a;
   
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  /* Bordas */
+  --border-subtle: #2a2a2a;
+  --border-blue: #1e3a8a;
+  
+  /* Transições */
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmangler.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-</head>
+/* Reset e Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-<body>
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__left">
-        <span class="status-dot"></span>
-        <span>Belém/PA • Atendimento Presencial e Nacional</span>
-      </div>
-      <div class="topbar__right">
-        <a href="mailto:contato@clovisribeiro.com">contato@clovisribeiro.com</a>
-        <span class="separator">|</span>
-        <a href="https://wa.me/5591992879843" target="_blank" rel="noopener"><strong>(91) 99287-9843</strong></a>
-      </div>
-    </div>
-  </div>
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="#inicio">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo Clovis Ribeiro" loading="lazy">
-        <div class="brand__text">
-          <span class="brand__name">CLOVIS RIBEIRO</span>
-          <span class="brand__tag">ENGENHARIA • PERÍCIAS • TI & SST</span>
-        </div>
-      </a>
-      
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 16px;
+  font-weight: 400;
+  overflow-x: hidden;
+}
 
-      <nav class="nav" id="mainNav">
-        <a href="#servicos">Especialidades</a>
-        <a href="#metodo">Método</a>
-        <a href="#qualificacoes">Qualificações</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contato" class="nav__cta">Análise de Viabilidade</a>
-      </nav>
-    </div>
-  </header>
+body.menu-open {
+  overflow: hidden;
+}
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="inicio">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <span class="kicker">Alta Performance em Engenharia Forense</span>
-          <h1 class="hero__title">Suporte Técnico <span class="highlight-text">Incontestável</span> para Decisões Críticas</h1>
-          <p class="hero__lead">Atuação técnica de alto nível baseada em evidências sólidas, rigor normativo (ISO/NR) e documentação integralmente rastreável. Provendo a clareza técnica indispensável para o convencimento jurídico e segurança estratégica.</p>
-          
-          <div class="hero__actions">
-            <a href="#contato" class="btn btn--primary">Solicitar Triagem Técnica</a>
-            <div class="hero__credentials">
-              <span>CREA-PA 1523383151</span>
-              <span>NFS-e (ISS) Belém/PA</span>
-            </div>
-          </div>
-        </div>
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-white);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
 
-        <div class="hero__visual">
-          <div class="profile-card">
-            <div class="profile-image">
-              <img src="assets/ClovisProfissional.png" alt="Engenheiro Clovis Alberto Galvão Ribeiro" loading="lazy">
-            </div>
-            <div class="profile-info">
-              <h2>Clovis Alberto Galvão Ribeiro</h2>
-              <p>Engenheiro de Computação & Segurança do Trabalho</p>
-              <div class="profile-certifications">
-                <span>AUDITOR LÍDER ISO 9001</span>
-                <span>AUDITOR LÍDER ISO 14001</span>
-                <span>AUDITOR LÍDER ISO 45001</span>
-                <span>AUDITOR LÍDER ISO 27001/27701</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
 
-    <!-- Qualificações -->
-    <section id="qualificacoes" class="section">
-      <div class="container qualificacoes-grid">
-        <article class="qualification-card">
-          <h3>ENGENHARIA E TI</h3>
-          <ul>
-            <li>Engenheiro de Computação</li>
-            <li>Esp. em Segurança da Informação</li>
-            <li>Esp. em Inteligência Artificial e Cloud</li>
-          </ul>
-        </article>
-        <article class="qualification-card">
-          <h3>SEGURANÇA DO TRABALHO</h3>
-          <ul>
-            <li>Engenheiro de Seg. do Trabalho</li>
-            <li>Esp. em Ergonomia e Gestão Integrada</li>
-            <li>Esp. em Perícia Judicial e Extrajudicial</li>
-          </ul>
-        </article>
-        <article class="qualification-card">
-          <h3>CERTIFICAÇÕES E AUDITORIA</h3>
-          <ul>
-            <li>Auditor Líder SGI (ISO 9001, 14001, 45001)</li>
-            <li>Auditor Líder ISO 27001 e 27701</li>
-            <li>Especialista em LGPD e Gestão de Riscos</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
 
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-      <div class="container trust-inner">
-        <span class="trust-item">ISO 27001</span>
-        <span class="trust-item">NR 01-38</span>
-        <span class="trust-item">ISO 9001</span>
-        <span class="trust-item">LGPD</span>
-        <span class="trust-item">CREA-PA</span>
-      </div>
-    </div>
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-    <!-- Serviços -->
-    <section id="servicos" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2 class="section-title">Especialidades & Entregáveis</h2>
-          <p class="section-subtitle">Suporte técnico de alto nível para escritórios de advocacia e departamentos jurídicos.</p>
-        </header>
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
 
-        <div class="services-grid">
-          <article class="service-card service-card--featured">
-            <div class="service-badge">Principal</div>
-            <div class="service-icon">⚖️</div>
-            <h3>Assistência Técnica Judicial</h3>
-            <p>Análise pericial crítica e elaboração de quesitos que direcionam o contraditório com rigor científico.</p>
-            <ul class="service-deliverables">
-              <li>Parecer de Impugnação</li>
-              <li>Matriz de Quesitos Críticos</li>
-              <li>Fiscalização de Perícias</li>
-            </ul>
-          </article>
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
 
-          <article class="service-card">
-            <div class="service-icon">🔍</div>
-            <h3>Perícia Extrajudicial</h3>
-            <p>Produção antecipada de provas e auditorias para fundamentação de teses e mitigação de passivos.</p>
-            <ul class="service-deliverables">
-              <li>Laudo de Constatação</li>
-              <li>Diagnóstico de Risco</li>
-            </ul>
-          </article>
+/* ===================================
+   TOPBAR
+   =================================== */
 
-          <article class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>Consultoria TI & SST</h3>
-            <p>Conformidade à ISO 27001 e Gestão de Riscos Ocupacionais (NRs) focando em compliance total.</p>
-            <ul class="service-deliverables">
-              <li>Relatório de Conformidade</li>
-              <li>Análise de Vulnerabilidades</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
+.topbar {
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 12px 0;
+  font-size: 13px;
+  color: var(--text-gray);
+}
 
-    <!-- Método (Timeline) -->
-    <section id="metodo" class="section section--dark">
-      <div class="container">
-        <header class="section-header">
-          <h2 class="section-title">Fluxo de Atuação Técnica</h2>
-          <p class="section-subtitle">Método estruturado em 3 etapas para garantir máxima eficácia técnica e jurídica.</p>
-        </header>
-        
-        <div class="timeline">
-          <article class="timeline-step">
-            <div class="timeline-number">01</div>
-            <div class="timeline-content">
-              <div class="timeline-icon">📋</div>
-              <h3>Triagem e Viabilidade</h3>
-              <p>Análise preliminar de petições, evidências e documentação técnica para definição precisa do escopo pericial.</p>
-              <ul class="timeline-details">
-                <li>Reunião de entendimento (30-45 min)</li>
-                <li>Análise documental inicial</li>
-                <li>Proposta técnica e orçamento</li>
-              </ul>
-            </div>
-          </article>
+.topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-          <article class="timeline-step">
-            <div class="timeline-number">02</div>
-            <div class="timeline-content">
-              <div class="timeline-icon">🔬</div>
-              <h3>Análise Normativa</h3>
-              <p>Estudo fundamentado em NRs, ISOs e jurisprudência técnica para construção de teses defensáveis.</p>
-              <ul class="timeline-details">
-                <li>Revisão técnica de laudos existentes</li>
-                <li>Mapeamento de não conformidades</li>
-                <li>Elaboração de quesitos estratégicos</li>
-              </ul>
-            </div>
-          </article>
+.topbar__left,
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-          <article class="timeline-step">
-            <div class="timeline-number">03</div>
-            <div class="timeline-content">
-              <div class="timeline-icon">📊</div>
-              <h3>Entrega e Suporte</h3>
-              <p>Emissão de pareceres técnicos, acompanhamento estratégico da demanda e suporte para audiências.</p>
-              <ul class="timeline-details">
-                <li>Parecer técnico fundamentado</li>
-                <li>Suporte para sustentação oral</li>
-                <li>Revisões e esclarecimentos inclusos</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
 
-    <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2 class="section-title">Perguntas Frequentes</h2>
-          <p class="section-subtitle">Esclarecimentos técnicos sobre assistência judicial, perícias e consultoria especializada.</p>
-        </header>
-        
-        <div class="faq-list">
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">Como a engenharia auxilia o advogado no contraditório?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>O assistente técnico provê a base científica para contestar laudos periciais, identificando falhas metodológicas, inconsistências normativas e vícios técnicos. Traduzimos essas falhas em argumentos jurídicos sólidos, elaboramos quesitos estratégicos e acompanhamos a perícia judicial para garantir rigor metodológico.</p>
-            </div>
-          </article>
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
 
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">O atendimento remoto é viável para processos judiciais?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>Sim. Através de peticionamento eletrônico (PJe/e-SAJ), videoconferências e plataformas colaborativas, atendemos demandas em todo o Brasil mantendo o mesmo rigor técnico. Para inspeções in loco quando necessário, deslocamos para qualquer região do país.</p>
-            </div>
-          </article>
+.separator {
+  opacity: 0.3;
+}
 
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">Qual o prazo médio para elaboração de um parecer técnico?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>Pareceres de impugnação: 5 a 10 dias úteis (dependendo da complexidade). Laudos extrajudiciais completos: 15 a 30 dias. Para demandas urgentes, oferecemos serviço expresso com acréscimo de 30% no valor.</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">Quais áreas técnicas são cobertas pelas perícias?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>Segurança do Trabalho (NRs, insalubridade, periculosidade, ergonomia), Tecnologia da Informação (segurança da informação, LGPD, ISO 27001), Sistemas de Gestão (ISO 9001, 14001, 45001) e Engenharia de Computação (falhas de software, infraestrutura de TI).</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">Como é calculado o valor da assistência técnica?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>Baseado na complexidade técnica, volume documental, prazos e necessidade de deslocamento. Após a triagem inicial, apresentamos proposta detalhada com escopo, prazos e valores. Aceitamos parcelamento e emitimos NFS-e (ISS Belém/PA).</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">É possível atuar como perito de confiança do juízo?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>Sim. Estou inscrito como perito judicial no CREA-PA e cadastrado em diversos tribunais. Atuo tanto como assistente técnico das partes quanto como perito judicial nomeado, sempre mantendo imparcialidade e rigor técnico-científico.</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">O parecer técnico pode ser contestado pela parte contrária?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>Todo parecer técnico pode ser objeto de contraditório. Por isso, nossa metodologia é rigorosamente fundamentada em normas técnicas (ABNT, ISO, NRs), literatura científica e jurisprudência técnica consolidada, minimizando vulnerabilidades e maximizando a solidez argumentativa.</p>
-            </div>
-          </article>
-
-          <article class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">Há suporte para sustentação oral em audiências?</span>
-              <span class="faq-toggle">+</span>
-            </button>
-            <div class="faq-content">
-              <p>Sim. Oferecemos acompanhamento presencial ou remoto em audiências de instrução, com preparação prévia de argumentação técnica, slides explicativos e esclarecimentos ao juízo. Esse serviço é contratado separadamente ou incluído em pacotes completos.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="section section--dark">
-      <div class="container">
-        <div class="contact-layout">
-          <div class="contact-info">
-            <span class="kicker">Inicie seu caso</span>
-            <h2 class="section-title">Solicitar Análise de Viabilidade</h2>
-            <p class="contact-description">Realizamos uma triagem criteriosa para garantir valor máximo à sua demanda. Comunicação protegida por sigilo profissional absoluto.</p>
-            
-            <div class="contact-features">
-              <div class="contact-feature">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-text">
-                  <strong>Resposta Rápida</strong>
-                  <span>Retorno em até 24h úteis</span>
-                </div>
-              </div>
-              <div class="contact-feature">
-                <div class="feature-icon">🔒</div>
-                <div class="feature-text">
-                  <strong>Sigilo Garantido</strong>
-                  <span>Proteção ética profissional</span>
-                </div>
-              </div>
-              <div class="contact-feature">
-                <div class="feature-icon">📄</div>
-                <div class="feature-text">
-                  <strong>NFS-e Inclusa</strong>
-                  <span>Documentação fiscal completa</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-details">
-              <div class="contact-item">
-                <strong>E-MAIL PROFISSIONAL</strong>
-                <a href="mailto:contato@clovisribeiro.com">contato@clovisribeiro.com</a>
-              </div>
-              <div class="contact-item">
-                <strong>WHATSAPP COMERCIAL</strong>
-                <a href="https://wa.me/5591992879843" target="_blank" rel="noopener">(91) 99287-9843</a>
-              </div>
-            </div>
-          </div>
-
-          <form class="contact-form" id="leadForm">
-            <div class="form-group">
-              <label for="nome">Nome Completo / Escritório</label>
-              <input type="text" id="nome" name="nome" placeholder="Dr. João Silva ou Silva & Associados" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-mail de Contato</label>
-              <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="telefone">Telefone / WhatsApp</label>
-              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
-            </div>
-
-            <div class="form-group">
-              <label for="tipo">Tipo de Demanda</label>
-              <select id="tipo" name="tipo">
-                <option value="">Selecione...</option>
-                <option value="assistencia">Assistência Técnica Judicial</option>
-                <option value="pericia">Perícia Extrajudicial</option>
-                <option value="consultoria">Consultoria TI/SST</option>
-                <option value="auditoria">Auditoria ISO</option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="resumo">Resumo da Demanda Técnica</label>
-              <textarea id="resumo" name="resumo" rows="5" placeholder="Descreva brevemente o contexto do processo, auditoria ou consultoria..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary btn--full">
-              Solicitar Análise via WhatsApp
-            </button>
-
-            <p class="form-note">Ao enviar, você concorda com nossos termos de confidencialidade e proteção de dados (LGPD).</p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <p><strong>Clovis Alberto Galvão Ribeiro</strong> • Engenheiro de Computação & Segurança do Trabalho</p>
-      <p>CREA-PA 1523383151 • Belém/PA • Atendimento Nacional</p>
-      <p class="footer-copy">© <span id="year"></span> • Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+.*
