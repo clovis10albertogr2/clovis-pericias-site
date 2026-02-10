@@ -898,9 +898,10 @@ button {
   padding-top: 24px;
   margin-top: 0;
   text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
 }
 
 /* ===================================
@@ -920,9 +921,10 @@ button {
   line-height: 1.7;
   margin-bottom: 40px;
   text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
 }
 
 .contact-features {
