@@ -1,0 +1,50 @@
+# robots.txt - Clovis Ribeiro - Engenharia Forense
+# Última atualização: 2026-02-09
+
+# Permitir todos os crawlers
+User-agent: *
+Allow: /
+
+# Bloquear apenas arquivos sensíveis específicos
+Disallow: /*.pdf$
+Disallow: /private/
+Disallow: /temp/
+
+# Sitemap
+Sitemap: https://www.clovisribeiro.com/sitemap.xml
+
+# Crawlers de IA (permitir para indexação semântica)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Bots maliciosos conhecidos (bloquear)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Crawl delay para bots agressivos
+User-agent: *
+Crawl-delay: 1
