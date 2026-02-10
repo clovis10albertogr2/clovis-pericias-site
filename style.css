@@ -919,6 +919,10 @@ button {
   color: var(--text-gray);
   line-height: 1.7;
   margin-bottom: 40px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .contact-features {
