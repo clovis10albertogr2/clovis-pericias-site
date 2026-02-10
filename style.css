@@ -344,6 +344,11 @@ button {
   color: var(--text-light);
   max-width: 600px;
   margin: 0 auto 40px;
+  text-align: justify;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
 }
 
 .hero__actions {
@@ -1022,6 +1027,11 @@ button {
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-light);
+  text-align: justify;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  word-break: normal;
 }
 
 .form-filter-note strong {
@@ -1032,6 +1042,7 @@ button {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-align: left;
 }
 
 .form-group {
