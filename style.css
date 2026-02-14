@@ -366,7 +366,7 @@ button {
   line-height: 1.7;
   color: var(--text-light);
   max-width: 600px;
-  margin: 0 auto 20px;
+  margin: 0 auto 12px;
   text-align: justify;
   hyphens: none;
   -webkit-hyphens: none;
@@ -1378,6 +1378,17 @@ button {
   line-height: 1.6;
 }
 
+.authority-note {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-top: 18px;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
 /* ===================================
    CONTATO
    =================================== */
@@ -2106,4 +2117,5 @@ button {
   .method-proof {
     font-size: 13px;
   }
-}
+  
+  .
