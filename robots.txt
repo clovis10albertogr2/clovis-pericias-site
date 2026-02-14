@@ -1,5 +1,5 @@
-# robots.txt - Clovis Ribeiro - Engenharia Forense
-# Última atualização: 2026-02-09
+# robots.txt - Clóvis Ribeiro - Assistência Técnica Judicial
+# Última atualização: 2026-02-14
 
 # Permitir todos os crawlers
 User-agent: *
@@ -11,7 +11,7 @@ Disallow: /private/
 Disallow: /temp/
 
 # Sitemap
-Sitemap: https://www.clovisribeiro.com/sitemap.xml
+Sitemap: https://clovisribeiro.com/sitemap.xml
 
 # Crawlers de IA (permitir para indexação semântica)
 User-agent: GPTBot
