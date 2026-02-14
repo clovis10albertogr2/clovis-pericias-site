@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <title>Obrigado! | Clóvis Ribeiro</title>
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google Analytics 4 & Google Ads (Configurável) -->
+  <script>
+    // Configuração GA4 - Deve ser a mesma do index.html
+    const GA4_ID = "";
+
+    // Configuração Google Ads - Deve ser a mesma do index.html
+    const ADS_ID = "";
+    const ADS_CONVERSION_LABEL = "";
+
+    // Inicializar dataLayer como fila (sempre)
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // Carregar gtag.js uma única vez (priorizar GA4, senão ADS)
+    const GTAG_LOAD_ID = GA4_ID || ADS_ID;
+    if (GTAG_LOAD_ID) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GTAG_LOAD_ID}`;
+      document.head.appendChild(script);
+
+      gtag('js', new Date());
+
+      // Configurar GA4 se ID estiver preenchido
+      if (GA4_ID) {
+        gtag('config', GA4_ID, {
+          'send_page_view': true
+        });
+      }
+
+      // Configurar Google Ads se ID estiver preenchido
+      if (ADS_ID) {
+        gtag('config', ADS_ID);
+      }
+
+      // Disparar conversão Google Ads ao carregar (preferencial)
+      if (ADS_ID && ADS_CONVERSION_LABEL) {
+        gtag('event', 'conversion', {
+          'send_to': `${ADS_ID}/${ADS_CONVERSION_LABEL}`
+        });
+      }
+
+      // Disparar evento GA4 de visualização da página de obrigado
+      if (GA4_ID) {
+        gtag('event', 'conversion_thankyou_view', {
+          'page_title': 'Obrigado',
+          'page_location': window.location.href
+        });
+      }
+    }
+
+    // Função de tracking segura (no-op se GA4 não estiver ativo)
+    function trackEvent(eventName, eventParams) {
+      if (GA4_ID) {
+        gtag('event', eventName, eventParams);
+      }
+    }
+  </script>
+</head>
+<body>
+  <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 32px;
+    background: linear-gradient(135deg, #05080f 0%, #0a0a0a 100%);
+  ">
+    <div style="max-width: 600px;">
+      <div style="
+        font-size: 64px;
+        margin-bottom: 32px;
+        animation: bounce 1s ease;
+      ">✅</div>
+      
+      <h1 style="
+        font-family: 'Inter', sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 16px;
+      ">Obrigado!</h1>
+      
+      <p style="
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        color: #a1a1aa;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      ">
+        Recebemos sua solicitação de análise de viabilidade técnica.<br>
+        Retornaremos em até 24 horas úteis via WhatsApp ou e-mail.
+      </p>
+      
+      <a href="/" style="
+        display: inline-block;
+        padding: 16px 40px;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+      ">Voltar para o Site</a>
+    </div>
+  </div>
+
+  <style>
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    a:hover {
+      background: #3b82f6 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4) !important;
+    }
+  </style>
+</body>
+</html>

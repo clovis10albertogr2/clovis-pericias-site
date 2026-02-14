@@ -78,22 +78,58 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Google Analytics 4 -->
-  <!-- AÇÃO OBRIGATÓRIA: Substituir G-XXXXXXXXXX pelo seu ID real do GA4 antes do deploy -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics 4 & Google Ads (Configurável) -->
   <script>
+    // Configuração GA4 - Preencher com ID real (ex: "G-ABC1234567") ou deixar vazio para desabilitar
+    const GA4_ID = "";
+
+    // Configuração Google Ads - Preencher com ID e Label ou deixar vazio para desabilitar
+    const ADS_ID = "";
+    const ADS_CONVERSION_LABEL = "";
+
+    // Inicializar dataLayer como fila (sempre)
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      'send_page_view': true,
-      'allow_google_signals': true,
-      'allow_ad_personalization_signals': false
-    });
 
-    // Eventos customizados GA4
+    // Carregar gtag.js uma única vez (priorizar GA4, senão ADS)
+    const GTAG_LOAD_ID = GA4_ID || ADS_ID;
+    if (GTAG_LOAD_ID) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GTAG_LOAD_ID}`;
+      document.head.appendChild(script);
+
+      gtag('js', new Date());
+
+      // Configurar GA4 se ID estiver preenchido
+      if (GA4_ID) {
+        gtag('config', GA4_ID, {
+          'send_page_view': true,
+          'allow_google_signals': true,
+          'allow_ad_personalization_signals': false
+        });
+      }
+
+      // Configurar Google Ads se ID estiver preenchido
+      if (ADS_ID) {
+        gtag('config', ADS_ID);
+      }
+    }
+
+    // Função de tracking segura (no-op se GA4 não estiver ativo)
     function trackEvent(eventName, eventParams) {
-      gtag('event', eventName, eventParams);
+      if (GA4_ID) {
+        gtag('event', eventName, eventParams);
+      }
+    }
+
+    // Função de conversão Google Ads
+    function trackAdsConversion() {
+      if (ADS_ID && ADS_CONVERSION_LABEL) {
+        gtag('event', 'conversion', {
+          'send_to': `${ADS_ID}/${ADS_CONVERSION_LABEL}`
+        });
+      }
     }
   </script>
 </head>
@@ -545,19 +581,28 @@
       
       const msg = `*Triagem Técnica - Clóvis Ribeiro*\n\n*Nome:* ${nome}\n*Email:* ${email}\n*Telefone:* ${telefone}\n*Tipo:* ${tipo || 'Não especificado'}\n*Resumo:* ${resumo}`;
       
-      // Tracking GA4
+      // Tracking GA4 - form_submit
       trackEvent('form_submit', {
         'form_name': 'contact_form',
         'tipo_demanda': tipo || 'não especificado'
       });
+
+      // Tracking GA4 - generate_lead
+      trackEvent('generate_lead', {
+        'method': 'whatsapp',
+        'service': tipo || 'não especificado'
+      });
+
+      // Tracking Google Ads - conversion
+      trackAdsConversion();
       
+      // Abrir WhatsApp em nova aba
       window.open(`https://wa.me/5591992879843?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
       
+      // Redirecionar página atual para obrigado.html após 500ms
       setTimeout(() => {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        btn.style.opacity = '1';
-      }, 2000);
+        window.location.href = '/obrigado.html';
+      }, 500);
     });
 
     // Menu mobile com acessibilidade
