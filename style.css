@@ -323,6 +323,17 @@ button {
   font-weight: 500;
   color: #2563eb;
   margin-top: 16px;
+  margin-bottom: 0;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__clarification {
+  font-size: 15px;
+  color: #94a3b8;
+  margin-top: 8px;
   margin-bottom: 24px;
   line-height: 1.5;
   max-width: 600px;
@@ -1211,6 +1222,18 @@ button {
   font-size: 16px;
 }
 
+/* Method Proof */
+.method-proof {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-top: 16px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
 /* ===================================
    FAQ
    =================================== */
@@ -1552,6 +1575,14 @@ button {
   padding-right: 45px;
 }
 
+.form-ethics {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+  text-align: center;
+  line-height: 1.5;
+}
+
 .btn.btn--primary.btn--full {
   width: 100%;
   background: linear-gradient(135deg, var(--blue-royal) 0%, var(--blue-light) 100%);
@@ -1689,6 +1720,10 @@ button {
   
   .hero__positioning {
     font-size: 16px;
+  }
+  
+  .hero__clarification {
+    font-size: 14px;
   }
   
   /* Mobile Menu */
@@ -1923,6 +1958,10 @@ button {
     font-size: 15px;
   }
   
+  .hero__clarification {
+    font-size: 13px;
+  }
+  
   .profile-certifications span {
     font-size: 7px;
     padding: 4px 8px;
@@ -2058,5 +2097,13 @@ button {
   
   .form-disclaimer {
     font-size: 12px;
+  }
+  
+  .form-ethics {
+    font-size: 12px;
+  }
+  
+  .method-proof {
+    font-size: 13px;
   }
 }

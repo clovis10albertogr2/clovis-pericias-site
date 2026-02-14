@@ -75,9 +75,13 @@
   }
   </script>
 
-  <!-- Fonts -->
+  <!-- Preconnect Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- Styles -->
@@ -161,7 +165,7 @@
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#inicio">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo Clóvis Ribeiro" fetchpriority="high">
+        <img class="brand__logo" src="assets/logo.png" alt="Logo Clóvis Ribeiro" fetchpriority="high" loading="eager">
         <div class="brand__text">
           <span class="brand__name">CLÓVIS RIBEIRO</span>
           <span class="brand__tag">ASSISTÊNCIA TÉCNICA JUDICIAL</span>
@@ -192,7 +196,8 @@
           <span class="kicker">Suporte Técnico Estratégico para Advogados</span>
           <h1 class="hero__title">Assistência Técnica Judicial em Engenharia</h1>
           <p class="hero__positioning">Atuação técnica estruturada para impugnação de laudos periciais em TI e Segurança do Trabalho.</p>
-          <p class="hero__lead">Apoio técnico especializado em TI e Segurança do Trabalho para fortalecer sua estratégia processual. Assistência Técnica Judicial com impugnação de laudos, elaboração de quesitos e pareceres técnicos fundamentados sob contraditório.</p>
+          <p class="hero__clarification">Atuação como Assistente Técnico das partes, com análise crítica sob contraditório.</p>
+          <p class="hero__lead">Apoio técnico especializado em TI e Segurança do Trabalho para fortalecer sua estratégia processual. Assistência Técnica Judicial em Engenharia com impugnação de laudos, elaboração de quesitos e pareceres técnicos fundamentados sob contraditório.</p>
           <p class="hero__target">Para advogados que precisam impugnar laudos periciais em TI ou Segurança do Trabalho.</p>
           
           <div class="hero__actions">
@@ -431,6 +436,8 @@
             </div>
           </article>
         </div>
+        
+        <p class="method-proof">Documentação técnica estruturada conforme normas aplicáveis e boas práticas periciais.</p>
       </div>
     </section>
 
@@ -646,6 +653,8 @@
               <label for="resumo">Resumo do Processo</label>
               <textarea id="resumo" name="resumo" rows="5" placeholder="Descreva brevemente o contexto do processo e a necessidade de assistência técnica..." required></textarea>
             </div>
+
+            <p class="form-ethics">Se o caso não exigir assistência técnica especializada, você será informado.</p>
 
             <button type="submit" class="btn btn--primary btn--full">
               Solicitar Análise Técnica do Caso
