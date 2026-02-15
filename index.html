@@ -131,15 +131,6 @@
         gtag('event', eventName, eventParams);
       }
     }
-
-    // Função de conversão Google Ads
-    function trackAdsConversion() {
-      if (ADS_ID && ADS_CONVERSION_LABEL) {
-        gtag('event', 'conversion', {
-          'send_to': `${ADS_ID}/${ADS_CONVERSION_LABEL}`
-        });
-      }
-    }
   </script>
 </head>
 
@@ -195,11 +186,12 @@
         <div class="hero__content">
           <span class="kicker">Suporte Técnico Estratégico para Advogados</span>
           <h1 class="hero__title">Assistente Técnico Judicial das Partes em Engenharia</h1>
-          <p class="hero__positioning">Atuação exclusiva como assistente técnico das partes em processos envolvendo TI e Segurança do Trabalho.</p>
-          <p class="hero__clarification">Suporte técnico sob contraditório para impugnação de laudos periciais e elaboração de quesitos estratégicos.</p>
-          <p class="hero__lead">Apoio técnico especializado em TI e Segurança do Trabalho para fortalecer a estratégia processual de advogados.</p>
-          <p class="hero__lead">Atuação como assistente técnico das partes com pareceres fundamentados, impugnação de laudos e elaboração de quesitos sob contraditório.</p>
-          <p class="hero__target">Para advogados que precisam de assistente técnico para impugnar laudos periciais em TI ou Segurança do Trabalho.</p>
+          
+          <p class="hero__lead">Atuação exclusiva como assistente técnico das partes em processos judiciais envolvendo Tecnologia da Informação e Segurança do Trabalho, com foco na construção de estratégia técnica sólida para fortalecimento da prova sob contraditório.</p>
+          
+          <p class="hero__lead">Elaboração de pareceres técnicos fundamentados, análise crítica de laudos periciais e estruturação de quesitos estratégicos com rigor metodológico e alinhamento às normas aplicáveis.</p>
+          
+          <p class="hero__target">Exclusivo para advogados e escritórios que necessitam suporte técnico qualificado para impugnação de laudos periciais.</p>
           
           <div class="hero__actions">
             <a href="#contato" class="btn btn--primary hero-cta-restore" onclick="trackEvent('cta_click', {'location': 'hero'})">Solicitar Análise Técnica do Caso</a>
@@ -310,40 +302,6 @@
       </div>
     </section>
 
-    <!-- Qualificações -->
-    <section id="qualificacoes" class="section section--dark">
-      <div class="container qualificacoes-grid">
-        <article class="qualification-card">
-          <h3>TECNOLOGIA DA INFORMAÇÃO</h3>
-          <ul>
-            <li>Engenheiro de Computação</li>
-            <li>Especialização em Inteligência Artificial</li>
-            <li>Especialização em Computação em Nuvem</li>
-            <li>Especialização em Segurança da Informação</li>
-          </ul>
-        </article>
-
-        <article class="qualification-card">
-          <h3>SEGURANÇA DO TRABALHO</h3>
-          <ul>
-            <li>Engenheiro de Segurança do Trabalho</li>
-            <li>MBA em Segurança e Saúde Ocupacional</li>
-            <li>Especialização em Ergonomia</li>
-            <li>Especialização em Gestão Integrada</li>
-          </ul>
-        </article>
-
-        <article class="qualification-card">
-          <h3>CERTIFICAÇÕES E AUDITORIA</h3>
-          <ul>
-            <li>Auditor Líder SGI (ISO 9001, 14001, 45001)</li>
-            <li>Auditor Líder ISO 27001 e 27701</li>
-            <li>Especialista em LGPD e Gestão de Riscos</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
     <!-- Como Funciona - METODOLOGIA PREMIUM -->
     <section id="como-funciona" class="section section--methodology">
       <div class="container">
@@ -443,6 +401,40 @@
         </div>
         
         <p class="method-proof">Documentação técnica estruturada conforme normas aplicáveis e boas práticas periciais.</p>
+      </div>
+    </section>
+
+    <!-- Qualificações -->
+    <section id="qualificacoes" class="section section--dark">
+      <div class="container qualificacoes-grid">
+        <article class="qualification-card">
+          <h3>TECNOLOGIA DA INFORMAÇÃO</h3>
+          <ul>
+            <li>Engenheiro de Computação</li>
+            <li>Especialização em Inteligência Artificial</li>
+            <li>Especialização em Computação em Nuvem</li>
+            <li>Especialização em Segurança da Informação</li>
+          </ul>
+        </article>
+
+        <article class="qualification-card">
+          <h3>SEGURANÇA DO TRABALHO</h3>
+          <ul>
+            <li>Engenheiro de Segurança do Trabalho</li>
+            <li>MBA em Segurança e Saúde Ocupacional</li>
+            <li>Especialização em Ergonomia</li>
+            <li>Especialização em Gestão Integrada</li>
+          </ul>
+        </article>
+
+        <article class="qualification-card">
+          <h3>CERTIFICAÇÕES E AUDITORIA</h3>
+          <ul>
+            <li>Auditor Líder SGI (ISO 9001, 14001, 45001)</li>
+            <li>Auditor Líder ISO 27001 e 27701</li>
+            <li>Especialista em LGPD e Gestão de Riscos</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -718,9 +710,6 @@
         'method': 'whatsapp',
         'service': 'assistente_tecnico_partes'
       });
-
-      // Tracking Google Ads - conversion
-      trackAdsConversion();
       
       // Abrir WhatsApp em nova aba
       window.open(`https://wa.me/5591992879843?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');

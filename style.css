@@ -283,7 +283,7 @@ button {
 
 .hero {
   padding: 40px 0 60px 0;
-  min-height: 90vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
 }
@@ -314,51 +314,8 @@ button {
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 0;
-  color: var(--text-white);
-}
-
-.hero__positioning {
-  font-size: 17px;
-  font-weight: 500;
-  color: #2563eb;
-  margin-top: 16px;
-  margin-bottom: 0;
-  line-height: 1.5;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero__clarification {
-  font-size: 15px;
-  color: #94a3b8;
-  margin-top: 8px;
   margin-bottom: 24px;
-  line-height: 1.5;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, var(--blue-light) 40%, var(--blue-royal) 80%, #1e3a8a 100%);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-elegant 6s ease-in-out infinite;
-  position: relative;
-  display: inline-block;
-}
-
-@keyframes gradient-elegant {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  color: var(--text-white);
 }
 
 .hero__lead {
@@ -1738,14 +1695,6 @@ button {
     margin-top: -10px;
   }
   
-  .hero__positioning {
-    font-size: 16px;
-  }
-  
-  .hero__clarification {
-    font-size: 14px;
-  }
-  
   /* Mobile Menu */
   .mobile-menu-toggle {
     display: flex;
@@ -1980,14 +1929,6 @@ button {
     font-size: 14px;
   }
   
-  .hero__positioning {
-    font-size: 15px;
-  }
-  
-  .hero__clarification {
-    font-size: 13px;
-  }
-  
   .profile-certifications span {
     font-size: 7px;
     padding: 4px 8px;
@@ -2110,6 +2051,4 @@ button {
   .authority-title {
     font-size: 24px;
   }
-  
-  .authority-list li {
-    flex
+}

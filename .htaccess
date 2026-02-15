@@ -1,22 +1,17 @@
 # ===================================
 # CONFIGURAÇÃO APACHE - CLOVIS RIBEIRO
-# Versão Otimizada com Segurança Avançada
+# Versão 8.0.0 - Refinamento Arquitetural Máximo
 # ===================================
 
 # Ativar RewriteEngine
 RewriteEngine On
 
 # ===================================
-# FORÇAR HTTPS
+# FORÇAR HTTPS E REMOVER WWW (ATUALIZADO)
 # ===================================
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# ===================================
-# REDIRECIONAR WWW PARA NÃO-WWW
-# ===================================
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.clovisribeiro\.com$ [NC]
+RewriteRule ^(.*)$ https://clovisribeiro.com/$1 [R=301,L]
 
 # ===================================
 # COMPRESSÃO GZIP
