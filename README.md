@@ -1,6 +1,6 @@
-# 🏛️ Clovis Ribeiro - Assistente Técnico Judicial das Partes em Engenharia
+# 🏛️ Clovis Ribeiro - Assistente Técnico Judicial em Segurança do Trabalho (SST)
 
-> Landing page profissional de alto desempenho para captação B2B estratégica em Assistência Técnica Judicial especializada em TI & Segurança do Trabalho.
+> Landing page profissional de alto desempenho para captação B2B estratégica em Assistência Técnica Judicial especializada em Segurança do Trabalho (SST).
 
 [![Status](https://img.shields.io/badge/status-production-success)](https://www.clovisribeiro.com)
 [![Version](https://img.shields.io/badge/version-8.0.0-blue)](https://github.com/clovis10albertogr2/clovis-pericias-site)
@@ -12,15 +12,16 @@
 
 ## 📋 Sobre o Projeto
 
-Site institucional de **Clovis Alberto Galvão Ribeiro**, Engenheiro de Computação e Engenheiro de Segurança do Trabalho, com atuação remota nacional e presencial em Belém/PA:
+Site institucional de **Clovis Alberto Galvão Ribeiro**, Engenheiro de Segurança do Trabalho, com atuação remota nacional e presencial em Belém/PA:
 
 - ⚖️ **Assistente Técnico Judicial das Partes** (foco principal)
-- 🔍 Impugnação de Laudos Periciais
-- 💻 Pareceres Técnicos em TI & Segurança do Trabalho
-- 📋 Elaboração de Quesitos Estratégicos
-- 🛡️ Auditoria ISO (9001, 14001, 45001, 27001, 27701)
+- 🔍 Impugnação de Laudos Periciais de SST
+- 📋 Pareceres Técnicos em SST
+- 📝 Elaboração de Quesitos Estratégicos
+- 🛡️ Auditoria ISO 45001
+- ⚠️ Atuação em causas de insalubridade (NR-15), periculosidade (NR-16), ergonomia (NR-17) e acidentes de trabalho
 
-**Público-alvo primário:** Advogados e escritórios jurídicos especializados em causas trabalhistas, cíveis e empresariais.
+**Público-alvo primário:** Advogados e escritórios jurídicos especializados em causas trabalhistas.
 
 ---
 
