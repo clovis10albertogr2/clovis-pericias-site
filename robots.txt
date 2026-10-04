@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /private/
-Disallow: /temp/
-
 Sitemap: https://clovisribeiro.com/sitemap.xml
