@@ -2339,3 +2339,51 @@ button {
     justify-content: center;
   }
 }
+
+
+/* ===================================
+   ACESSIBILIDADE E HARDENING VISUAL
+   =================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--blue-light);
+  outline-offset: 3px;
+}
+
+.brand__tag,
+.kicker,
+.hero__target,
+.profile-info p,
+.profile-certifications span,
+.service-choice-kicker,
+.methodology-badge,
+.step-micro,
+.qualification-card h3,
+.form-group label {
+  color: var(--blue-light);
+}
+
+.form-note,
+.footer-copy {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -99,7 +99,7 @@
           <span class="brand__tag">ENGENHARIA DE COMPUTAÇÃO</span>
         </div>
       </a>
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
       <nav class="nav" id="mainNav" aria-label="Navegação Computação Forense">
         <a href="#servicos">Serviços</a>
         <a href="#quando-contratar">Quando contratar</a>
@@ -238,10 +238,10 @@
       <div class="container">
         <header class="section-header"><h2 class="section-title">Perguntas frequentes</h2><p class="section-subtitle section-subtitle--centered">O que a análise digital pode — e não pode — afirmar.</p></header>
         <div class="faq-list">
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-1"><span class="faq-question">A análise pode ser feita totalmente à distância?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-1"><p>Muitas demandas documentais podem ser analisadas remotamente, desde que os arquivos e registros necessários sejam disponibilizados de forma adequada. Quando o objeto exigir exame físico, coleta presencial ou acesso específico a equipamento, o escopo precisa ser avaliado antes da contratação.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-2"><span class="faq-question">Você consegue afirmar quem realizou uma ação digital?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-2"><p>Somente se os elementos técnicos permitirem uma conclusão dessa natureza. Um registro de IP, dispositivo ou sessão, isoladamente, pode ter limitações. O parecer deve distinguir identificação técnica de inferências sobre autoria humana.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-3"><span class="faq-question">É possível analisar assinatura eletrônica e biometria facial?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-3"><p>Podem ser analisados os registros, fluxos, metadados e mecanismos técnicos apresentados como evidência. A conclusão depende da documentação disponível e não pressupõe que um mecanismo seja válido, inválido, seguro ou fraudulento antes da análise.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-4"><span class="faq-question">O serviço substitui a estratégia jurídica?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-4"><p>Não. O trabalho é técnico de engenharia. O parecer e os esclarecimentos subsidiam o advogado, que permanece responsável pela interpretação jurídica e pela condução do processo.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-1"><span class="faq-question">A análise pode ser feita totalmente à distância?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="ti-faq-1"><p>Muitas demandas documentais podem ser analisadas remotamente, desde que os arquivos e registros necessários sejam disponibilizados de forma adequada. Quando o objeto exigir exame físico, coleta presencial ou acesso específico a equipamento, o escopo precisa ser avaliado antes da contratação.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-2"><span class="faq-question">Você consegue afirmar quem realizou uma ação digital?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="ti-faq-2"><p>Somente se os elementos técnicos permitirem uma conclusão dessa natureza. Um registro de IP, dispositivo ou sessão, isoladamente, pode ter limitações. O parecer deve distinguir identificação técnica de inferências sobre autoria humana.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-3"><span class="faq-question">É possível analisar assinatura eletrônica e biometria facial?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="ti-faq-3"><p>Podem ser analisados os registros, fluxos, metadados e mecanismos técnicos apresentados como evidência. A conclusão depende da documentação disponível e não pressupõe que um mecanismo seja válido, inválido, seguro ou fraudulento antes da análise.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-4"><span class="faq-question">O serviço substitui a estratégia jurídica?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="ti-faq-4"><p>Não. O trabalho é técnico de engenharia. O parecer e os esclarecimentos subsidiam o advogado, que permanece responsável pela interpretação jurídica e pela condução do processo.</p></div></article>
         </div>
       </div>
     </section>
@@ -261,9 +261,9 @@
 
         <form class="contact-form" id="ti-contact-form">
           <p class="form-filter-note"><strong>Área:</strong> Computação Forense e Evidência Digital</p>
-          <div class="form-group"><label for="ti-nome">Nome / Escritório / Empresa</label><input type="text" id="ti-nome" name="nome" required></div>
-          <div class="form-group"><label for="ti-email">E-mail</label><input type="email" id="ti-email" name="email" required></div>
-          <div class="form-group"><label for="ti-telefone">Telefone / WhatsApp</label><input type="tel" id="ti-telefone" name="telefone" required></div>
+          <div class="form-group"><label for="ti-nome">Nome / Escritório / Empresa</label><input type="text" id="ti-nome" name="nome" autocomplete="name" required></div>
+          <div class="form-group"><label for="ti-email">E-mail</label><input type="email" id="ti-email" name="email" autocomplete="email" required></div>
+          <div class="form-group"><label for="ti-telefone">Telefone / WhatsApp</label><input type="tel" id="ti-telefone" name="telefone" autocomplete="tel" required></div>
           <div class="form-group"><label for="ti-tipo">Tema principal</label><select id="ti-tipo" name="tipo"><option value="">Selecione...</option><option value="Contrato ou assinatura eletrônica">Contrato ou assinatura eletrônica</option><option value="Logs ou registros de sistema">Logs ou registros de sistema</option><option value="Autenticação ou biometria">Autenticação ou biometria</option><option value="Documento ou metadado digital">Documento ou metadado digital</option><option value="Outro tema digital">Outro tema digital</option></select></div>
           <div class="form-group"><label for="ti-resumo">Resumo da questão técnica</label><textarea id="ti-resumo" name="resumo" rows="5" required></textarea></div>
           <button type="submit" class="btn btn--primary btn--full">Continuar pelo WhatsApp</button>
@@ -285,6 +285,7 @@
       mobileToggle.addEventListener('click', () => {
         const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
         mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
+        mobileToggle.setAttribute('aria-label', isExpanded ? 'Abrir menu de navegação' : 'Fechar menu de navegação');
         mainNav.classList.toggle('nav--open');
         document.body.classList.toggle('menu-open');
       });
@@ -292,8 +293,19 @@
         link.addEventListener('click', () => {
           mainNav.classList.remove('nav--open');
           mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.setAttribute('aria-label', 'Abrir menu de navegação');
           document.body.classList.remove('menu-open');
         });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('nav--open')) {
+          mainNav.classList.remove('nav--open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+          document.body.classList.remove('menu-open');
+          mobileToggle.focus();
+        }
       });
     }
 

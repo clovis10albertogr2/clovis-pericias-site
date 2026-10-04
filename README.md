@@ -44,12 +44,15 @@ A página principal apresenta as duas formações de engenharia e encaminha o vi
 
 Os formulários não registram lead por simples abertura do WhatsApp. Eles preparam a mensagem e somente registram intenção de contato. O envio efetivo depende de confirmação do usuário no WhatsApp.
 
-## Performance e acessibilidade
+## Performance, acessibilidade e segurança
 
 - Meta de desempenho: Lighthouse 90+; deve ser confirmada por auditoria após versões relevantes.
 - Cache diferenciado por tipo de recurso.
 - Imagem principal do hero priorizada.
+- Foco visível, suporte à preferência por redução de movimento e contraste reforçado em textos pequenos.
 - Estrutura orientada a boas práticas de acessibilidade; conformidade WCAG depende de auditoria específica.
+- Metadados Git e arquivos administrativos são bloqueados no webroot.
+- HSTS ativo sem `includeSubDomains` ou `preload`; a CSP mantém scripts e estilos inline por compatibilidade com a arquitetura atual.
 
 ## Tecnologias
 

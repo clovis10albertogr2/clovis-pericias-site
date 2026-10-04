@@ -109,7 +109,7 @@
           <span class="brand__tag">ENGENHARIA • ASSISTÊNCIA TÉCNICA</span>
         </div>
       </a>
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
       </button>
       <nav class="nav" id="mainNav" aria-label="Navegação principal">
@@ -293,6 +293,7 @@
       mobileToggle.addEventListener('click', () => {
         const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
         mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
+        mobileToggle.setAttribute('aria-label', isExpanded ? 'Abrir menu de navegação' : 'Fechar menu de navegação');
         mainNav.classList.toggle('nav--open');
         document.body.classList.toggle('menu-open');
       });
@@ -300,8 +301,19 @@
         link.addEventListener('click', () => {
           mainNav.classList.remove('nav--open');
           mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.setAttribute('aria-label', 'Abrir menu de navegação');
           document.body.classList.remove('menu-open');
         });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('nav--open')) {
+          mainNav.classList.remove('nav--open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+          document.body.classList.remove('menu-open');
+          mobileToggle.focus();
+        }
       });
     }
 
