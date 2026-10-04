@@ -1,10 +1,13 @@
 # ===================================
 # CONFIGURAÇÃO APACHE - CLOVIS RIBEIRO
-# Versão 8.0.0 - Refinamento Arquitetural Máximo
+# Versão 9.0.0 - Arquitetura Multivertical
 # ===================================
 
 # Ativar RewriteEngine
 RewriteEngine On
+
+# Resolver diretórios das verticais para seus respectivos index.html
+DirectoryIndex index.html
 
 # ===================================
 # FORÇAR HTTPS E REMOVER WWW (ATUALIZADO)
@@ -119,15 +122,6 @@ RewriteRule ^(.*)$ https://clovisribeiro.com/$1 [R=301,L]
 # PÁGINA DE ERRO PERSONALIZADA
 # ===================================
 ErrorDocument 404 /404.html
-ErrorDocument 403 /404.html
-ErrorDocument 500 /404.html
-
-# ===================================
-# PROTEÇÃO CONTRA HOTLINKING DE IMAGENS
-# ===================================
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https://(www\.)?clovisribeiro\.com [NC]
-RewriteRule \.(jpg|jpeg|png|gif|webp|svg)$ - [F,L]
 
 # ===================================
 # DESABILITAR LISTAGEM DE DIRETÓRIOS
