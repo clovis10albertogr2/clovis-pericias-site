@@ -71,6 +71,11 @@ jobs:
               ;;
           esac
 
+          if [ "$HOSTINGER_REMOTE_DIR" = "/" ] || [ "$HOSTINGER_REMOTE_DIR" = "." ]; then
+            echo "::error::HOSTINGER_REMOTE_DIR não pode apontar para a raiz genérica do servidor."
+            exit 1
+          fi
+
       - name: Instalar lftp
         shell: bash
         run: |
