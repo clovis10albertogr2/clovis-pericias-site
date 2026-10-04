@@ -31,7 +31,7 @@ Site institucional de **Clovis Alberto Galvão Ribeiro**, Engenheiro de Seguran�
 - ⚡ Meta de desempenho: Lighthouse 90+; resultado deve ser confirmado por auditoria após cada versão relevante.
 - 🗜️ Compressão Gzip ativada
 - 📦 Cache estratégico por tipo de recurso (HTML revalidado, CSS/JS por 1 dia, imagens por 7 dias e fontes locais por 1 ano)
-- 🖼️ Lazy loading de imagens com atributos `width` e `height`
+- 🖼️ Priorização explícita da imagem principal do hero e dimensões declaradas nos recursos visuais
 - 🚀 Hero otimizado (`min-height: 75vh`)
 
 ### ✅ SEO & Indexaç��o
@@ -40,7 +40,7 @@ Site institucional de **Clovis Alberto Galvão Ribeiro**, Engenheiro de Seguran�
 - 🗺️ Sitemap.xml simplificado (apenas homepage)
 - 🤖 Robots.txt estratégico
 - 📊 Google Analytics 4 + Google Ads configurável
-- 🎯 Conversão centralizada na página de agradecimento
+- 🎯 Tracking de intenção de contato no formulário; a abertura do WhatsApp não é tratada como conversão confirmada
 
 ### ✅ Segurança
 - 🔒 HTTPS forçado via .htaccess (redirecionamento 301 otimizado)
