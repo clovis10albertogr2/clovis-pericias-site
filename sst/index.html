@@ -99,7 +99,7 @@
           <span class="brand__tag">ENGENHARIA DE SEGURANÇA DO TRABALHO</span>
         </div>
       </a>
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
       <nav class="nav" id="mainNav" aria-label="Navegação SST">
         <a href="#servicos">Serviços</a>
         <a href="#quando-contratar">Quando contratar</a>
@@ -250,10 +250,10 @@
       <div class="container">
         <header class="section-header"><h2 class="section-title">Perguntas frequentes</h2><p class="section-subtitle section-subtitle--centered">Limites e funcionamento do serviço.</p></header>
         <div class="faq-list">
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-1"><span class="faq-question">O atendimento é somente em Belém?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="sst-faq-1"><p>Não. Análises documentais, reuniões e entregas técnicas podem ser realizadas remotamente em todo o Brasil quando o objeto permitir. Diligências ou acompanhamentos presenciais são oferecidos em Belém e Região Metropolitana, conforme disponibilidade e escopo.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-2"><span class="faq-question">É preciso esperar o laudo para contratar?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="sst-faq-2"><p>Não. A atuação pode começar antes da perícia, especialmente para análise documental, formulação de quesitos e definição dos pontos técnicos relevantes.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-3"><span class="faq-question">Você define a estratégia jurídica do processo?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="sst-faq-3"><p>Não. O trabalho é de natureza técnica de engenharia. Os resultados fornecem subsídios ao advogado, que permanece responsável pela estratégia jurídica e pela condução processual.</p></div></article>
-          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-4"><span class="faq-question">A análise de doença ocupacional substitui avaliação médica?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="sst-faq-4"><p>Não. A Engenharia de Segurança do Trabalho pode examinar fatores ocupacionais, ergonomia e condições de trabalho. Questões médicas exigem o profissional habilitado correspondente.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-1"><span class="faq-question">O atendimento é somente em Belém?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="sst-faq-1"><p>Não. Análises documentais, reuniões e entregas técnicas podem ser realizadas remotamente em todo o Brasil quando o objeto permitir. Diligências ou acompanhamentos presenciais são oferecidos em Belém e Região Metropolitana, conforme disponibilidade e escopo.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-2"><span class="faq-question">É preciso esperar o laudo para contratar?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="sst-faq-2"><p>Não. A atuação pode começar antes da perícia, especialmente para análise documental, formulação de quesitos e definição dos pontos técnicos relevantes.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-3"><span class="faq-question">Você define a estratégia jurídica do processo?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="sst-faq-3"><p>Não. O trabalho é de natureza técnica de engenharia. Os resultados fornecem subsídios ao advogado, que permanece responsável pela estratégia jurídica e pela condução processual.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-4"><span class="faq-question">A análise de doença ocupacional substitui avaliação médica?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="sst-faq-4"><p>Não. A Engenharia de Segurança do Trabalho pode examinar fatores ocupacionais, ergonomia e condições de trabalho. Questões médicas exigem o profissional habilitado correspondente.</p></div></article>
         </div>
       </div>
     </section>
@@ -273,9 +273,9 @@
 
         <form class="contact-form" id="sst-contact-form">
           <p class="form-filter-note"><strong>Área:</strong> Segurança do Trabalho</p>
-          <div class="form-group"><label for="sst-nome">Nome / Escritório</label><input type="text" id="sst-nome" name="nome" required></div>
-          <div class="form-group"><label for="sst-email">E-mail</label><input type="email" id="sst-email" name="email" required></div>
-          <div class="form-group"><label for="sst-telefone">Telefone / WhatsApp</label><input type="tel" id="sst-telefone" name="telefone" required></div>
+          <div class="form-group"><label for="sst-nome">Nome / Escritório</label><input type="text" id="sst-nome" name="nome" autocomplete="name" required></div>
+          <div class="form-group"><label for="sst-email">E-mail</label><input type="email" id="sst-email" name="email" autocomplete="email" required></div>
+          <div class="form-group"><label for="sst-telefone">Telefone / WhatsApp</label><input type="tel" id="sst-telefone" name="telefone" autocomplete="tel" required></div>
           <div class="form-group"><label for="sst-tipo">Tema principal</label><select id="sst-tipo" name="tipo"><option value="">Selecione...</option><option value="Insalubridade">Insalubridade</option><option value="Periculosidade">Periculosidade</option><option value="Ergonomia">Ergonomia</option><option value="Acidente de trabalho">Acidente de trabalho</option><option value="Outro SST">Outro tema de SST</option></select></div>
           <div class="form-group"><label for="sst-resumo">Resumo e prazo</label><textarea id="sst-resumo" name="resumo" rows="5" required></textarea></div>
           <button type="submit" class="btn btn--primary btn--full">Continuar pelo WhatsApp</button>
@@ -297,6 +297,7 @@
       mobileToggle.addEventListener('click', () => {
         const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
         mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
+        mobileToggle.setAttribute('aria-label', isExpanded ? 'Abrir menu de navegação' : 'Fechar menu de navegação');
         mainNav.classList.toggle('nav--open');
         document.body.classList.toggle('menu-open');
       });
@@ -304,8 +305,19 @@
         link.addEventListener('click', () => {
           mainNav.classList.remove('nav--open');
           mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.setAttribute('aria-label', 'Abrir menu de navegação');
           document.body.classList.remove('menu-open');
         });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('nav--open')) {
+          mainNav.classList.remove('nav--open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+          document.body.classList.remove('menu-open');
+          mobileToggle.focus();
+        }
       });
     }
 
