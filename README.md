@@ -28,7 +28,7 @@ Site institucional de **Clovis Alberto Galvão Ribeiro**, Engenheiro de Seguran�
 ## 🎯 Características Técnicas
 
 ### ✅ Performance
-- ⚡ Lighthouse Score: 95+ (Performance, SEO, Accessibility)
+- ⚡ Meta de desempenho: Lighthouse 90+; resultado deve ser confirmado por auditoria após cada versão relevante.
 - 🗜️ Compressão Gzip ativada
 - 📦 Cache estratégico de recursos estáticos (1 ano para imagens/fontes)
 - 🖼️ Lazy loading de imagens com atributos `width` e `height`
@@ -51,7 +51,7 @@ Site institucional de **Clovis Alberto Galvão Ribeiro**, Engenheiro de Seguran�
 
 ### ✅ Experiência do Usuário
 - 📱 Design responsivo mobile-first
-- ♿ Acessibilidade WCAG 2.1 (AA)
+- ♿ Estrutura orientada a boas práticas de acessibilidade; conformidade WCAG 2.1 AA depende de auditoria específica.
 - 🎨 Glassmorphism e animações sutis (sem excessos)
 - 🧭 Navegação intuitiva com smooth scroll
 - 📝 Textos justificados sem hifenização automática
