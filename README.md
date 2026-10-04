@@ -30,7 +30,7 @@ Site institucional de **Clovis Alberto Galvão Ribeiro**, Engenheiro de Seguran�
 ### ✅ Performance
 - ⚡ Meta de desempenho: Lighthouse 90+; resultado deve ser confirmado por auditoria após cada versão relevante.
 - 🗜️ Compressão Gzip ativada
-- 📦 Cache estratégico de recursos estáticos (1 ano para imagens/fontes)
+- 📦 Cache estratégico por tipo de recurso (HTML revalidado, CSS/JS por 1 dia, imagens por 7 dias e fontes locais por 1 ano)
 - 🖼️ Lazy loading de imagens com atributos `width` e `height`
 - 🚀 Hero otimizado (`min-height: 75vh`)
 
