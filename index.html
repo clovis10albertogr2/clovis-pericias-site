@@ -690,8 +690,9 @@
       e.preventDefault();
       
       const btn = e.target.querySelector('.btn--primary');
+      if (btn.disabled) return;
       const originalText = btn.textContent;
-      btn.textContent = 'Redirecionando para WhatsApp...';
+      btn.textContent = 'Abrindo WhatsApp...';
       btn.disabled = true;
       btn.style.opacity = '0.7';
       
@@ -703,25 +704,18 @@
       
       const msg = `*Assistente Técnico Judicial das Partes - Clóvis Ribeiro*\n\n*Nome:* ${nome}\n*Email:* ${email}\n*Telefone:* ${telefone}\n*Tipo de Processo:* ${tipo || 'Não especificado'}\n*Resumo:* ${resumo}`;
       
-      // Tracking GA4 - form_submit
-      trackEvent('form_submit', {
-        'form_name': 'contact_form',
-        'tipo_processo': tipo || 'não especificado'
-      });
-
-      // Tracking GA4 - generate_lead
-      trackEvent('generate_lead', {
-        'method': 'whatsapp',
-        'service': 'assistente_tecnico_partes'
-      });
+      // Tracking GA4 - intenção de contato
+      trackEvent('contact_form_submit', {'method': 'whatsapp', 'tipo_processo': tipo || 'nao_especificado'});
       
       // Abrir WhatsApp em nova aba
       window.open(`https://wa.me/5591992879843?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
       
-      // Redirecionar página atual para obrigado.html após 500ms
+      // Restaurar botão após 1000ms
       setTimeout(() => {
-        window.location.href = '/obrigado.html';
-      }, 500);
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.opacity = '';
+      }, 1000);
     });
 
     // Menu mobile com acessibilidade
