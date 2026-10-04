@@ -4,162 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  
   <title>404 - Página Não Encontrada | Clóvis Ribeiro</title>
-  
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  
+  <link rel="icon" type="image/png" href="/assets/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #05080f 0%, #0a0a0a 100%);
-      color: #f1f5f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    body::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      animation: pulse 4s ease-in-out infinite;
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
-    }
-    
-    .error-container {
-      max-width: 600px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .error-code {
-      font-size: clamp(80px, 15vw, 140px);
-      font-weight: 800;
-      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 24px;
-      animation: gradient-shift 3s ease infinite;
-      background-size: 200% 200%;
-    }
-    
-    @keyframes gradient-shift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    
-    h1 {
-      font-size: clamp(24px, 4vw, 36px);
-      margin-bottom: 16px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    
-    p {
-      font-size: clamp(16px, 2vw, 18px);
-      color: #94a3b8;
-      margin-bottom: 40px;
-      line-height: 1.6;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 16px 40px;
-      background: #2563eb;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 16px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
-      border: 1px solid rgba(37, 99, 235, 0.5);
-    }
-    
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
-      background: #3b82f6;
-      border-color: #3b82f6;
-    }
-    
-    .btn:active {
-      transform: translateY(-1px);
-    }
-    
-    .error-meta {
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(148, 163, 184, 0.2);
-      font-size: 14px;
-      color: #64748b;
-    }
-    
-    .error-meta a {
-      color: #3b82f6;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    .error-meta a:hover {
-      color: #60a5fa;
-      text-decoration: underline;
-    }
-    
-    @media (max-width: 480px) {
-      body { padding: 16px; }
-      .error-code { font-size: 80px; margin-bottom: 20px; }
-      h1 { font-size: 24px; }
-      p { font-size: 16px; margin-bottom: 32px; }
-      .btn { padding: 14px 32px; font-size: 15px; }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;background:#05080f;color:#f1f5f9;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}.wrap{max-width:680px}.code{font-size:clamp(80px,15vw,140px);font-weight:800;color:#2563eb;line-height:1;margin-bottom:24px}h1{font-size:clamp(26px,4vw,38px);margin-bottom:16px}p{color:#94a3b8;font-size:18px;line-height:1.6;margin-bottom:32px}.actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}a{display:inline-block;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700}.primary{background:#2563eb;color:white}.secondary{border:1px solid #334155;color:#e2e8f0}
   </style>
 </head>
 <body>
-  <div class="error-container">
-    <div class="error-code">404</div>
-    <h1>Página Não Encontrada</h1>
-    <p>A página que você está procurando não existe, foi movida ou está temporariamente indisponível.</p>
-    <a href="/" class="btn">Voltar para o Início</a>
-    
-    <div class="error-meta">
-      <p>Precisa de assistência técnica em Segurança do Trabalho?<br>
-      <a href="/#contato">Entre em contato</a> ou ligue <a href="tel:+5591992879843">(91) 99287-9843</a></p>
+  <main class="wrap">
+    <div class="code">404</div>
+    <h1>Página não encontrada</h1>
+    <p>O endereço pode ter sido alterado. Escolha uma das áreas profissionais ou volte ao site principal.</p>
+    <div class="actions">
+      <a class="primary" href="/">Site principal</a>
+      <a class="secondary" href="/sst/">Segurança do Trabalho</a>
+      <a class="secondary" href="/computacao-forense/">Computação Forense</a>
     </div>
-  </div>
-
-  <script>
-    // Tracking GA4 para páginas 404
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'exception', {
-        'description': '404_error',
-        'fatal': false,
-        'page_location': window.location.href,
-        'page_referrer': document.referrer
-      });
-    }
-  </script>
+  </main>
 </body>
 </html>

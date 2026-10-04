@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>Computação Forense e Evidência Digital | Clóvis Ribeiro</title>
+  <meta name="description" content="Assistência técnica em Computação Forense e Evidência Digital: logs, autenticação, assinaturas eletrônicas, metadados, documentos digitais e registros de sistemas." />
+  <meta name="author" content="Clóvis Alberto Galvão Ribeiro" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+  <link rel="canonical" href="https://clovisribeiro.com/computacao-forense/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clovisribeiro.com/computacao-forense/" />
+  <meta property="og:title" content="Computação Forense e Evidência Digital | Clóvis Ribeiro" />
+  <meta property="og:description" content="Assistência técnica para análise de evidências digitais, registros de sistemas, autenticação e documentos eletrônicos." />
+  <meta property="og:image" content="https://clovisribeiro.com/assets/ClovisProfissional.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content="https://clovisribeiro.com/assets/ClovisProfissional.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Clóvis Ribeiro - Computação Forense e Evidência Digital",
+    "url": "https://clovisribeiro.com/computacao-forense/",
+    "image": "https://clovisribeiro.com/assets/ClovisProfissional.png",
+    "description": "Assistência técnica em Computação Forense e Evidência Digital para análise de registros, autenticação, assinaturas eletrônicas, metadados e evidências de sistemas.",
+    "provider": {
+      "@type": "Person",
+      "name": "Clóvis Alberto Galvão Ribeiro",
+      "jobTitle": "Engenheiro de Computação"
+    },
+    "areaServed": ["Belém/PA", "Brasil - atendimento remoto conforme escopo"],
+    "serviceType": [
+      "Computação Forense",
+      "Análise de Evidência Digital",
+      "Análise de Logs",
+      "Análise de Autenticação e Assinaturas Eletrônicas"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  
+  <script>
+    const GA4_ID = "";
+    const ADS_ID = "";
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    const GTAG_LOAD_ID = GA4_ID || ADS_ID;
+    if (GTAG_LOAD_ID) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GTAG_LOAD_ID}`;
+      document.head.appendChild(script);
+      gtag('js', new Date());
+      if (GA4_ID) {
+        gtag('config', GA4_ID, {
+          'send_page_view': true,
+          'allow_google_signals': true,
+          'allow_ad_personalization_signals': false
+        });
+      }
+      if (ADS_ID) gtag('config', ADS_ID);
+    }
+    function trackEvent(eventName, eventParams) {
+      if (GA4_ID) gtag('event', eventName, eventParams);
+    }
+  </script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__left"><span class="status-dot"></span><span>Análise digital remota: Brasil • Presencial: Belém e Região Metropolitana, conforme necessidade</span></div>
+      <div class="topbar__right">
+        <a href="mailto:contato@clovisribeiro.com">contato@clovisribeiro.com</a>
+        <span class="separator">|</span>
+        <a href="https://wa.me/5591992879843" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="../">
+        <img class="brand__logo" src="../assets/logo.png" alt="Logo Clóvis Ribeiro" width="48" height="48" loading="eager">
+        <div class="brand__text">
+          <span class="brand__name">CLÓVIS RIBEIRO</span>
+          <span class="brand__tag">ENGENHARIA DE COMPUTAÇÃO</span>
+        </div>
+      </a>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu de navegação" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav" id="mainNav" aria-label="Navegação Computação Forense">
+        <a href="#servicos">Serviços</a>
+        <a href="#quando-contratar">Quando contratar</a>
+        <a href="#metodo">Método</a>
+        <a href="../sst/">SST</a>
+        <a href="#contato" class="nav__cta">Solicitar avaliação</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero service-hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <a class="breadcrumb" href="../">← Voltar ao site principal</a>
+          <span class="kicker">Computação Forense e Evidência Digital</span>
+          <h1 class="hero__title">Fatos digitais precisam de prova técnica, não de suposição</h1>
+          <p class="hero__lead">Assistência técnica para examinar logs, registros de sistemas, autenticação, assinaturas eletrônicas, metadados, documentos digitais e outros elementos usados para sustentar ou contestar fatos tecnológicos.</p>
+          <p class="hero__target">Atendimento remoto nacional para demandas compatíveis com análise de evidências disponibilizadas. Atuação presencial em Belém e Região Metropolitana quando tecnicamente necessária e previamente definida.</p>
+          <div class="hero__actions hero__actions--left">
+            <a href="#contato" class="btn btn--primary hero-cta-restore">Solicitar avaliação da evidência digital</a>
+            <div class="hero__credentials">
+              <span>Engenheiro de Computação</span>
+              <span>CREA-PA ativo</span>
+              <span>Segurança da Informação • Perícia Digital</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="profile-card">
+            <div class="profile-image">
+              <img src="../assets/ClovisProfissional.png" alt="Clóvis Alberto Galvão Ribeiro" width="380" height="380" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+            <div class="profile-info">
+              <h2>Clóvis Alberto Galvão Ribeiro</h2>
+              <p>Engenheiro de Computação</p>
+              <div class="profile-certifications">
+                <span>COMPUTAÇÃO FORENSE</span>
+                <span>SEGURANÇA DA INFORMAÇÃO</span>
+                <span>EVIDÊNCIA DIGITAL</span>
+                <span>ASSISTÊNCIA TÉCNICA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--premium" id="servicos">
+      <div class="container">
+        <header class="section-header">
+          <span class="methodology-badge">Escopo técnico</span>
+          <h2 class="section-title">O que pode ser tecnicamente examinado</h2>
+          <p class="section-subtitle section-subtitle--centered">A conclusão depende da qualidade, integridade, contexto e cadeia de obtenção dos elementos disponibilizados.</p>
+        </header>
+
+        <div class="modern-grid">
+          <article class="modern-card modern-card--featured">
+            <div class="featured-badge">Evidência</div>
+            <div class="card-icon" aria-hidden="true">#</div>
+            <h3>Integridade e Consistência</h3>
+            <div class="card-divider"></div>
+            <p>Análise de coerência entre documentos digitais, metadados, registros técnicos e a narrativa apresentada no processo ou na investigação.</p>
+          </article>
+          <article class="modern-card">
+            <div class="card-icon" aria-hidden="true">&lt;/&gt;</div>
+            <h3>Logs e Registros de Sistemas</h3>
+            <div class="card-divider"></div>
+            <p>Exame de logs, trilhas de auditoria, eventos, registros de sessão, IPs, dispositivos e outros dados técnicos fornecidos para análise.</p>
+          </article>
+          <article class="modern-card">
+            <div class="card-icon" aria-hidden="true">ID</div>
+            <h3>Autenticação e Assinaturas Eletrônicas</h3>
+            <div class="card-divider"></div>
+            <p>Análise técnica de fluxos de autenticação, assinaturas eletrônicas, certificados, carimbos de tempo, biometria documentada e mecanismos de aceite.</p>
+          </article>
+        </div>
+
+        <div class="scope-grid">
+          <div class="scope-panel"><h3>Documentos e contratos eletrônicos</h3><p>Metadados, versões, origem declarada, mecanismos de aceite e coerência entre artefatos digitais.</p></div>
+          <div class="scope-panel"><h3>Fraudes e segurança</h3><p>Elementos técnicos relacionados a acesso, autenticação, eventos de segurança e rastros de sistemas, conforme os dados disponíveis.</p></div>
+          <div class="scope-panel"><h3>Quesitos e parecer técnico</h3><p>Formulação de perguntas técnicas, análise crítica de laudos e organização das conclusões em linguagem compreensível.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--filter" id="quando-contratar">
+      <div class="container">
+        <div class="filter-block">
+          <h2 class="filter-title">Quando considerar a contratação</h2>
+          <ul class="filter-list">
+            <li><span class="filter-check">✓</span><span class="filter-text">Quando autenticidade, integridade ou origem de documento ou registro digital estiverem em discussão.</span></li>
+            <li><span class="filter-check">✓</span><span class="filter-text">Quando contratos eletrônicos, assinaturas, autenticação ou biometria forem relevantes para a controvérsia.</span></li>
+            <li><span class="filter-check">✓</span><span class="filter-text">Quando logs ou registros de sistemas precisarem ser interpretados tecnicamente.</span></li>
+            <li><span class="filter-check">✓</span><span class="filter-text">Quando for necessário formular quesitos, revisar laudo de informática ou produzir parecer técnico sobre evidência digital.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--methodology" id="metodo">
+      <div class="container">
+        <header class="section-header">
+          <span class="methodology-badge">Fluxo de trabalho</span>
+          <h2 class="section-title">Escopo, evidência e conclusão</h2>
+          <p class="section-subtitle section-subtitle--centered">Nenhuma conclusão é prometida antes do exame dos elementos disponíveis.</p>
+        </header>
+        <div class="methodology-timeline">
+          <div class="timeline-line-gradient"></div>
+          <article class="methodology-step" data-step="1">
+            <div class="step-marker"><div class="marker-ring-outer"><div class="marker-ring-inner"><span class="step-number">01</span></div></div></div>
+            <div class="step-card"><h3>Triagem técnica</h3><p class="step-micro">Questão, evidência e objetivo</p><div class="step-divider"></div><p class="step-description">Identificação do fato tecnológico em discussão, dos arquivos ou registros disponíveis e das perguntas que precisam ser respondidas.</p><ul class="step-list"><li>Delimitação do objeto</li><li>Verificação do material disponível</li><li>Definição de entregáveis e honorários</li></ul></div>
+          </article>
+          <article class="methodology-step" data-step="2">
+            <div class="step-marker"><div class="marker-ring-outer"><div class="marker-ring-inner"><span class="step-number">02</span></div></div></div>
+            <div class="step-card"><h3>Análise forense</h3><p class="step-micro">Coerência, rastros e limitações</p><div class="step-divider"></div><p class="step-description">Exame técnico dos artefatos disponibilizados, preservando a distinção entre o que é demonstrado pelos dados, o que é apenas compatível e o que não pode ser concluído.</p><ul class="step-list"><li>Logs e metadados</li><li>Autenticação e registros</li><li>Inconsistências e limitações</li></ul></div>
+          </article>
+          <article class="methodology-step" data-step="3">
+            <div class="step-marker"><div class="marker-ring-outer"><div class="marker-ring-inner"><span class="step-number">03</span></div></div></div>
+            <div class="step-card"><h3>Parecer e suporte técnico</h3><p class="step-micro">Conclusões compreensíveis e auditáveis</p><div class="step-divider"></div><p class="step-description">Organização das conclusões, resposta a quesitos e suporte técnico para que advogado, empresa ou parte compreendam o alcance real da evidência.</p><ul class="step-list"><li>Parecer técnico</li><li>Quesitos e esclarecimentos</li><li>Análise crítica de laudo de informática</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" id="qualificacoes">
+      <div class="container qualificacoes-grid">
+        <article class="qualification-card"><h3>FORMAÇÃO</h3><ul><li>Engenharia de Computação</li><li>Segurança da Informação</li><li>Perícia Forense aplicada à Informática</li></ul></article>
+        <article class="qualification-card"><h3>ÁREAS TÉCNICAS</h3><ul><li>Computação Forense</li><li>Evidência e documentos digitais</li><li>Logs, autenticação e segurança</li></ul></article>
+        <article class="qualification-card"><h3>CREDENCIAIS</h3><ul><li>CREA-PA ativo</li><li>Perito Judicial e Assistente Técnico</li><li>Base profissional em Belém/PA</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section-header"><h2 class="section-title">Perguntas frequentes</h2><p class="section-subtitle section-subtitle--centered">O que a análise digital pode — e não pode — afirmar.</p></header>
+        <div class="faq-list">
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-1"><span class="faq-question">A análise pode ser feita totalmente à distância?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-1"><p>Muitas demandas documentais podem ser analisadas remotamente, desde que os arquivos e registros necessários sejam disponibilizados de forma adequada. Quando o objeto exigir exame físico, coleta presencial ou acesso específico a equipamento, o escopo precisa ser avaliado antes da contratação.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-2"><span class="faq-question">Você consegue afirmar quem realizou uma ação digital?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-2"><p>Somente se os elementos técnicos permitirem uma conclusão dessa natureza. Um registro de IP, dispositivo ou sessão, isoladamente, pode ter limitações. O parecer deve distinguir identificação técnica de inferências sobre autoria humana.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-3"><span class="faq-question">É possível analisar assinatura eletrônica e biometria facial?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-3"><p>Podem ser analisados os registros, fluxos, metadados e mecanismos técnicos apresentados como evidência. A conclusão depende da documentação disponível e não pressupõe que um mecanismo seja válido, inválido, seguro ou fraudulento antes da análise.</p></div></article>
+          <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-4"><span class="faq-question">O serviço substitui a estratégia jurídica?</span><span class="faq-toggle">+</span></button><div class="faq-content" id="ti-faq-4"><p>Não. O trabalho é técnico de engenharia. O parecer e os esclarecimentos subsidiam o advogado, que permanece responsável pela interpretação jurídica e pela condução do processo.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container contact-layout">
+        <div class="contact-info">
+          <span class="kicker">Avaliação inicial</span>
+          <h2 class="section-title">Descreva o fato digital em discussão</h2>
+          <p class="contact-description">Informe quais registros, documentos ou sistemas estão envolvidos e qual dúvida técnica precisa ser esclarecida. Não envie senhas ou credenciais de acesso pelo formulário.</p>
+          <div class="contact-features">
+            <div class="contact-feature"><div class="feature-icon">#</div><div class="feature-text"><strong>Escopo verificável</strong><span>Perguntas técnicas antes das conclusões</span></div></div>
+            <div class="contact-feature"><div class="feature-icon">🔒</div><div class="feature-text"><strong>Confidencialidade</strong><span>Tratamento responsável das informações</span></div></div>
+            <div class="contact-feature"><div class="feature-icon">!</div><div class="feature-text"><strong>Sem promessas de resultado</strong><span>Conclusões dependem da evidência</span></div></div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="ti-contact-form">
+          <p class="form-filter-note"><strong>Área:</strong> Computação Forense e Evidência Digital</p>
+          <div class="form-group"><label for="ti-nome">Nome / Escritório / Empresa</label><input type="text" id="ti-nome" name="nome" required></div>
+          <div class="form-group"><label for="ti-email">E-mail</label><input type="email" id="ti-email" name="email" required></div>
+          <div class="form-group"><label for="ti-telefone">Telefone / WhatsApp</label><input type="tel" id="ti-telefone" name="telefone" required></div>
+          <div class="form-group"><label for="ti-tipo">Tema principal</label><select id="ti-tipo" name="tipo"><option value="">Selecione...</option><option value="Contrato ou assinatura eletrônica">Contrato ou assinatura eletrônica</option><option value="Logs ou registros de sistema">Logs ou registros de sistema</option><option value="Autenticação ou biometria">Autenticação ou biometria</option><option value="Documento ou metadado digital">Documento ou metadado digital</option><option value="Outro tema digital">Outro tema digital</option></select></div>
+          <div class="form-group"><label for="ti-resumo">Resumo da questão técnica</label><textarea id="ti-resumo" name="resumo" rows="5" required></textarea></div>
+          <button type="submit" class="btn btn--primary btn--full">Continuar pelo WhatsApp</button>
+          <p class="form-note">Não informe senhas, códigos de autenticação ou credenciais. O formulário apenas prepara a mensagem; o envio só ocorre após sua confirmação no WhatsApp. Consulte o <a href="../privacidade.html">Aviso de Privacidade</a>.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-content"><p><strong>Clóvis Alberto Galvão Ribeiro</strong> • Engenheiro de Computação</p><p>Computação Forense e Evidência Digital • Base em Belém/PA</p><p class="footer-legal-note">Serviço técnico de engenharia. Conclusões dependem da evidência disponível e não substituem assessoria jurídica.</p><p><a href="../">Site principal</a> • <a href="../sst/">Segurança do Trabalho</a> • <a href="../privacidade.html">Privacidade</a></p><p class="footer-copy">© <span id="year"></span> • Todos os direitos reservados.</p></div></footer>
+
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    const mainNav = document.getElementById('mainNav');
+    if (mobileToggle && mainNav) {
+      mobileToggle.addEventListener('click', () => {
+        const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', String(!isExpanded));
+        mainNav.classList.toggle('nav--open');
+        document.body.classList.toggle('menu-open');
+      });
+      document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('nav--open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+        });
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    document.querySelectorAll('.faq-trigger').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('faq-item--active');
+            const trigger = other.querySelector('.faq-trigger');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        button.setAttribute('aria-expanded', String(!isExpanded));
+        item.classList.toggle('faq-item--active');
+      });
+    });
+  </script>
+  <script>
+    document.getElementById('ti-contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn--primary');
+      if (btn.disabled) return;
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Abrindo WhatsApp...';
+      btn.style.opacity = '0.7';
+
+      const nome = document.getElementById('ti-nome').value;
+      const email = document.getElementById('ti-email').value;
+      const telefone = document.getElementById('ti-telefone').value;
+      const tipo = document.getElementById('ti-tipo').value || 'Não especificado';
+      const resumo = document.getElementById('ti-resumo').value;
+      const msg = `*Computação Forense - Clóvis Ribeiro*\n\n*Nome / Escritório / Empresa:* ${nome}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n*Tema:* ${tipo}\n*Questão técnica:* ${resumo}`;
+
+      trackEvent('contact_form_submit', { method: 'whatsapp', service: 'computacao_forense', tipo_processo: tipo });
+      window.open(`https://wa.me/5591992879843?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.opacity = '';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
