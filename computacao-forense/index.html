@@ -352,7 +352,7 @@
       const resumo = document.getElementById('ti-resumo').value;
       const msg = `*Computação Forense - Clóvis Ribeiro*\n\n*Nome / Escritório / Empresa:* ${nome}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n*Tema:* ${tipo}\n*Questão técnica:* ${resumo}`;
 
-      trackEvent('contact_form_submit', { method: 'whatsapp', service: 'computacao_forense', tipo_processo: tipo });
+      trackEvent('whatsapp_click', { source: 'forense_contact_form', service: 'computacao_forense', demand_topic: tipo });
       window.open(`https://wa.me/5591992879843?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
 
       setTimeout(() => {
