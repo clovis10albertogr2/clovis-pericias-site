@@ -275,82 +275,87 @@
     </section>
 
     <!-- MODAL DE QUALIFICAÇÃO -->
-    <div id="qualificadorModal" class="modal" style="display: none;">
-      <div class="modal__overlay" onclick="closeQualificador()"></div>
-      <div class="modal__content">
-        <button class="modal__close" onclick="closeQualificador()" aria-label="Fechar">×</button>
+    <div id="qualificadorModal" class="modal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="qualificadorTitle" aria-describedby="qualificadorSubtitle" aria-hidden="true">
+      <div class="modal__overlay" onclick="closeQualificador()" aria-hidden="true"></div>
+      <div class="modal__content" tabindex="-1">
+        <button class="modal__close" onclick="closeQualificador()" aria-label="Fechar avaliação">×</button>
 
         <div id="qualificadorForm">
-          <h3>Avaliação de aderência ao escopo</h3>
-          <p class="modal__subtitle">Responda para verificar se há compatibilidade técnica</p>
+          <h3 id="qualificadorTitle">Avaliação inicial de aderência</h3>
+          <p class="modal__subtitle" id="qualificadorSubtitle">Responda 5 perguntas para verificar se a demanda se aproxima das áreas técnicas atendidas.</p>
 
-          <div class="form-step" data-step="1">
-            <label>1. Você é:</label>
-            <div class="options">
-              <button type="button" class="option-btn" data-value="3" data-next="2">Advogado/Escritório</button>
-              <button type="button" class="option-btn" data-value="2" data-next="2">Empresa</button>
-              <button type="button" class="option-btn" data-value="1" data-next="2">Parte em processo</button>
-              <button type="button" class="option-btn" data-value="0" data-next="2">Outro</button>
+          <div class="form-step" data-step="1" data-key="perfil">
+            <p class="step-question">1. Você é:</p>
+            <div class="options" role="group" aria-label="Perfil do solicitante">
+              <button type="button" class="option-btn" data-answer="Advogado/Escritório" data-next="2">Advogado/Escritório</button>
+              <button type="button" class="option-btn" data-answer="Empresa" data-next="2">Empresa</button>
+              <button type="button" class="option-btn" data-answer="Parte interessada" data-next="2">Parte interessada</button>
+              <button type="button" class="option-btn" data-answer="Outro" data-next="2">Outro</button>
             </div>
           </div>
 
-          <div class="form-step" data-step="2" style="display: none;">
-            <label>2. Contexto da demanda:</label>
-            <div class="options">
-              <button type="button" class="option-btn" data-value="3" data-next="3">Trabalhista</button>
-              <button type="button" class="option-btn" data-value="3" data-next="3">Cível/Contratos</button>
-              <button type="button" class="option-btn" data-value="2" data-next="3">Criminal com prova digital</button>
-              <button type="button" class="option-btn" data-value="1" data-next="3">Outro</button>
+          <div class="form-step" data-step="2" data-key="area" style="display: none;">
+            <p class="step-question">2. Qual área técnica mais se aproxima da demanda?</p>
+            <div class="options" role="group" aria-label="Área técnica da demanda">
+              <button type="button" class="option-btn" data-answer="SST" data-next="3">Segurança do Trabalho</button>
+              <button type="button" class="option-btn" data-answer="FORENSE" data-next="3">Computação Forense / Evidência Digital</button>
+              <button type="button" class="option-btn" data-answer="INCERTO" data-next="3">Não tenho certeza</button>
+              <button type="button" class="option-btn" data-answer="OUTRO" data-next="3">Outro tema técnico</button>
             </div>
           </div>
 
-          <div class="form-step" data-step="3" style="display: none;">
-            <label>3. Tipo de demanda:</label>
-            <div class="options">
-              <button type="button" class="option-btn" data-value="3" data-next="4">Assistência técnica</button>
-              <button type="button" class="option-btn" data-value="3" data-next="4">Perícia extrajudicial</button>
-              <button type="button" class="option-btn" data-value="2" data-next="4">Laudo/Parecer técnico</button>
-              <button type="button" class="option-btn" data-value="1" data-next="4">Dúvida inicial</button>
+          <div class="form-step" data-step="3" data-key="tipo" style="display: none;">
+            <p class="step-question">3. Tipo de demanda:</p>
+            <div class="options" role="group" aria-label="Tipo de demanda">
+              <button type="button" class="option-btn" data-answer="Assistência técnica" data-next="4">Assistência técnica</button>
+              <button type="button" class="option-btn" data-answer="Perícia extrajudicial" data-next="4">Perícia extrajudicial</button>
+              <button type="button" class="option-btn" data-answer="Laudo/Parecer técnico" data-next="4">Laudo/Parecer técnico</button>
+              <button type="button" class="option-btn" data-answer="Dúvida inicial" data-next="4">Dúvida inicial</button>
             </div>
           </div>
 
-          <div class="form-step" data-step="4" style="display: none;">
-            <label>4. Urgência:</label>
-            <div class="options">
-              <button type="button" class="option-btn" data-value="3" data-next="5">Imediata</button>
-              <button type="button" class="option-btn" data-value="2" data-next="5">30 dias</button>
-              <button type="button" class="option-btn" data-value="1" data-next="5">60+ dias</button>
+          <div class="form-step" data-step="4" data-key="contexto" style="display: none;">
+            <p class="step-question">4. Contexto da demanda:</p>
+            <div class="options" role="group" aria-label="Contexto da demanda">
+              <button type="button" class="option-btn" data-answer="Trabalhista" data-next="5">Trabalhista</button>
+              <button type="button" class="option-btn" data-answer="Cível/Contratos" data-next="5">Cível/Contratos</button>
+              <button type="button" class="option-btn" data-answer="Criminal com prova digital" data-next="5">Criminal com prova digital</button>
+              <button type="button" class="option-btn" data-answer="Extrajudicial/Empresarial" data-next="5">Extrajudicial/Empresarial</button>
+              <button type="button" class="option-btn" data-answer="Outro" data-next="5">Outro</button>
             </div>
           </div>
 
-          <div class="form-step" data-step="5" style="display: none;">
-            <label>5. Valor estimado da causa:</label>
-            <div class="options">
-              <button type="button" class="option-btn" data-value="1" data-next="result">Até R$ 100k</button>
-              <button type="button" class="option-btn" data-value="2" data-next="result">R$ 100k-500k</button>
-              <button type="button" class="option-btn" data-value="3" data-next="result">Acima de R$ 500k</button>
-              <button type="button" class="option-btn" data-value="2" data-next="result">Não se aplica</button>
+          <div class="form-step" data-step="5" data-key="prazo" style="display: none;">
+            <p class="step-question">5. Prazo ou necessidade atual:</p>
+            <div class="options" role="group" aria-label="Prazo da demanda">
+              <button type="button" class="option-btn" data-answer="Urgente" data-next="result">Urgente</button>
+              <button type="button" class="option-btn" data-answer="Até 30 dias" data-next="result">Até 30 dias</button>
+              <button type="button" class="option-btn" data-answer="Mais de 30 dias" data-next="result">Mais de 30 dias</button>
+              <button type="button" class="option-btn" data-answer="Sem prazo definido" data-next="result">Sem prazo definido</button>
             </div>
           </div>
         </div>
 
-        <div id="qualificadorResult" style="display: none;">
+        <div id="qualificadorResult" style="display: none;" aria-live="polite">
           <div id="resultAprovado" style="display: none;">
-            <div class="result-icon">✓</div>
-            <h3>Há aderência ao escopo</h3>
-            <p>Com base nas respostas, sua demanda está dentro da área de atuação. Clique abaixo para iniciar conversa pelo WhatsApp com o contexto pré-preenchido.</p>
-            <a id="whatsappLink" class="btn btn--primary" href="#" target="_blank" rel="noopener noreferrer">
-              Falar no WhatsApp
-            </a>
+            <div class="result-icon" aria-hidden="true">✓</div>
+            <h3>Há aderência inicial ao escopo</h3>
+            <p>As respostas indicam compatibilidade inicial com uma das áreas técnicas atendidas. O enquadramento definitivo depende da análise do objeto e dos documentos disponíveis.</p>
+            <a id="whatsappLink" class="btn btn--primary" href="#" target="_blank" rel="noopener noreferrer">Continuar no WhatsApp</a>
+          </div>
+
+          <div id="resultRevisao" style="display: none;">
+            <div class="result-icon" aria-hidden="true">?</div>
+            <h3>Aderência a confirmar</h3>
+            <p>O pré-filtro não permite concluir a aderência com segurança. Envie o contexto resumido para uma avaliação inicial antes de qualquer contratação.</p>
+            <a id="whatsappLinkRevisao" class="btn btn--primary" href="#" target="_blank" rel="noopener noreferrer">Enviar contexto pelo WhatsApp</a>
           </div>
 
           <div id="resultReprovado" style="display: none;">
-            <div class="result-icon">!</div>
-            <h3>Fora do escopo atual</h3>
-            <p>Com base nas respostas, não há aderência técnica às áreas de atuação (SST ou Computação Forense). Posso indicar profissionais adequados se desejar.</p>
-            <a class="btn btn--secondary" href="mailto:contato@clovisribeiro.com?subject=Indicação%20-%20Fora%20do%20escopo">
-              Solicitar indicação por e-mail
-            </a>
+            <div class="result-icon" aria-hidden="true">!</div>
+            <h3>Sem aderência identificada pelo pré-filtro</h3>
+            <p>As respostas não indicaram relação suficiente com Segurança do Trabalho ou Computação Forense. Se houver algum elemento técnico dessas áreas que não apareceu nas perguntas, envie um breve resumo para avaliação inicial.</p>
+            <a id="whatsappLinkReprovado" class="btn btn--secondary" href="#" target="_blank" rel="noopener noreferrer">Enviar resumo pelo WhatsApp</a>
           </div>
         </div>
       </div>
@@ -427,9 +432,9 @@
         font-size: 14px;
       }
 
-      .form-step label {
+      .step-question {
         display: block;
-        margin-bottom: 16px;
+        margin: 0 0 16px;
         font-weight: 500;
         color: #fff;
       }
@@ -477,6 +482,11 @@
         color: #34d399;
       }
 
+      #resultRevisao .result-icon {
+        background: #1e3a5f;
+        color: #93c5fd;
+      }
+
       #resultReprovado .result-icon {
         background: #7c2d12;
         color: #fb923c;
@@ -512,22 +522,36 @@
 
   
   <script>
-    let pontuacao = 0;
     let respostas = {};
+    let lastFocusedElement = null;
+    const qualificadorModal = document.getElementById('qualificadorModal');
+    const modalContent = qualificadorModal.querySelector('.modal__content');
+    const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
     function openQualificador() {
-      document.getElementById('qualificadorModal').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+      lastFocusedElement = document.activeElement;
       resetQualificador();
+      qualificadorModal.style.display = 'flex';
+      qualificadorModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      trackEvent('qualifier_start', { source: 'home' });
+      requestAnimationFrame(() => {
+        const closeButton = qualificadorModal.querySelector('.modal__close');
+        if (closeButton) closeButton.focus();
+      });
     }
 
     function closeQualificador() {
-      document.getElementById('qualificadorModal').style.display = 'none';
+      if (qualificadorModal.style.display === 'none') return;
+      qualificadorModal.style.display = 'none';
+      qualificadorModal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
     }
 
     function resetQualificador() {
-      pontuacao = 0;
       respostas = {};
       document.querySelectorAll('.form-step').forEach(step => {
         step.style.display = step.dataset.step === '1' ? 'block' : 'none';
@@ -535,47 +559,119 @@
       document.getElementById('qualificadorForm').style.display = 'block';
       document.getElementById('qualificadorResult').style.display = 'none';
       document.getElementById('resultAprovado').style.display = 'none';
+      document.getElementById('resultRevisao').style.display = 'none';
       document.getElementById('resultReprovado').style.display = 'none';
     }
 
     document.querySelectorAll('.option-btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        const valor = parseInt(this.dataset.value, 10);
+        const step = this.closest('.form-step');
+        const key = step.dataset.key;
         const nextStep = this.dataset.next;
-
-        pontuacao += valor;
+        respostas[key] = this.dataset.answer;
 
         if (nextStep === 'result') {
           mostrarResultado();
         } else {
-          document.querySelectorAll('.form-step').forEach(step => {
-            step.style.display = 'none';
+          document.querySelectorAll('.form-step').forEach(item => {
+            item.style.display = 'none';
           });
-          document.querySelector(`[data-step="${nextStep}"]`).style.display = 'block';
+          const next = document.querySelector(`[data-step="${nextStep}"]`);
+          next.style.display = 'block';
+          const firstOption = next.querySelector('.option-btn');
+          if (firstOption) firstOption.focus();
         }
       });
     });
 
-    function mostrarResultado() {
-      document.getElementById('qualificadorForm').style.display = 'none';
-      document.getElementById('qualificadorResult').style.display = 'block';
-
-      if (pontuacao >= 10) {
-        document.getElementById('resultAprovado').style.display = 'block';
-        document.getElementById('resultReprovado').style.display = 'none';
-
-        const texto = `Olá, Clóvis. Gostaria de avaliar uma demanda técnica. Perfil: ${pontuacao} pontos no pré-qualificador.`;
-        const link = `https://wa.me/5591992879843?text=${encodeURIComponent(texto)}`;
-        document.getElementById('whatsappLink').href = link;
-      } else {
-        document.getElementById('resultAprovado').style.display = 'none';
-        document.getElementById('resultReprovado').style.display = 'block';
-      }
+    function classificarAderencia() {
+      if (respostas.area === 'OUTRO') return 'sem_aderencia';
+      if (respostas.area === 'INCERTO') return 'revisao';
+      if (respostas.area === 'SST' && respostas.contexto === 'Criminal com prova digital') return 'revisao';
+      if (respostas.area === 'SST' || respostas.area === 'FORENSE') return 'aderente';
+      return 'revisao';
     }
 
+    function montarMensagem(outcome) {
+      const areaLabel = {
+        SST: 'Segurança do Trabalho',
+        FORENSE: 'Computação Forense / Evidência Digital',
+        INCERTO: 'Não tenho certeza',
+        OUTRO: 'Outro tema técnico'
+      }[respostas.area] || 'Não informado';
+
+      return [
+        'Olá, Clóvis. Fiz a avaliação inicial no site e gostaria de analisar uma demanda técnica.',
+        '',
+        `Perfil: ${respostas.perfil || 'Não informado'}`,
+        `Área técnica indicada: ${areaLabel}`,
+        `Tipo de demanda: ${respostas.tipo || 'Não informado'}`,
+        `Contexto: ${respostas.contexto || 'Não informado'}`,
+        `Prazo: ${respostas.prazo || 'Não informado'}`,
+        `Resultado do pré-filtro: ${outcome === 'aderente' ? 'aderência inicial' : outcome === 'sem_aderencia' ? 'sem aderência identificada' : 'aderência a confirmar'}`,
+        '',
+        'Posso complementar com um breve resumo e os documentos disponíveis.'
+      ].join('\n');
+    }
+
+    function mostrarResultado() {
+      const outcome = classificarAderencia();
+      document.getElementById('qualificadorForm').style.display = 'none';
+      document.getElementById('qualificadorResult').style.display = 'block';
+      document.getElementById('resultAprovado').style.display = outcome === 'aderente' ? 'block' : 'none';
+      document.getElementById('resultRevisao').style.display = outcome === 'revisao' ? 'block' : 'none';
+      document.getElementById('resultReprovado').style.display = outcome === 'sem_aderencia' ? 'block' : 'none';
+
+      const link = `https://wa.me/5591992879843?text=${encodeURIComponent(montarMensagem(outcome))}`;
+      document.getElementById('whatsappLink').href = link;
+      document.getElementById('whatsappLinkRevisao').href = link;
+      document.getElementById('whatsappLinkReprovado').href = link;
+
+      trackEvent('qualifier_complete', {
+        source: 'home',
+        outcome,
+        service_area: respostas.area || 'unknown',
+        demand_type: respostas.tipo || 'unknown'
+      });
+
+      const activeResult = document.querySelector('#qualificadorResult > div[style*="block"]');
+      const action = activeResult ? activeResult.querySelector('a') : null;
+      if (action) action.focus();
+    }
+
+    ['whatsappLink', 'whatsappLinkRevisao', 'whatsappLinkReprovado'].forEach(id => {
+      document.getElementById(id).addEventListener('click', () => {
+        trackEvent('whatsapp_click', {
+          source: 'home_qualifier',
+          service_area: respostas.area || 'unknown',
+          outcome: classificarAderencia()
+        });
+      });
+    });
+
     document.addEventListener('keydown', function(e) {
+      if (qualificadorModal.style.display === 'none') return;
+
       if (e.key === 'Escape') {
+        e.preventDefault();
         closeQualificador();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusable = [...modalContent.querySelectorAll(focusableSelector)]
+          .filter(el => el.offsetParent !== null);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
 
