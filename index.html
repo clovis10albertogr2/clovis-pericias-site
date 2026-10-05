@@ -262,15 +262,242 @@
           <div>
             <span class="kicker">Contato profissional</span>
             <h2>Não sabe qual área corresponde ao seu caso?</h2>
-            <p>Envie uma descrição objetiva da demanda. A primeira resposta serve para identificar a área técnica e verificar se há aderência ao escopo.</p>
+            <p>Responda 5 perguntas rápidas para verificar aderência ao escopo e receber orientação inicial.</p>
           </div>
           <div class="cta-band__actions">
-            <a class="btn btn--primary" href="https://wa.me/5591992879843?text=Ol%C3%A1%2C%20Cl%C3%B3vis.%20Gostaria%20de%20avaliar%20uma%20demanda%20t%C3%A9cnica." target="_blank" rel="noopener noreferrer">Falar pelo WhatsApp</a>
+            <button class="btn btn--primary" onclick="openQualificador()" type="button">
+              Iniciar avaliação de demanda
+            </button>
             <a class="btn btn--secondary" href="mailto:contato@clovisribeiro.com">Enviar e-mail</a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- MODAL DE QUALIFICAÇÃO -->
+    <div id="qualificadorModal" class="modal" style="display: none;">
+      <div class="modal__overlay" onclick="closeQualificador()"></div>
+      <div class="modal__content">
+        <button class="modal__close" onclick="closeQualificador()" aria-label="Fechar">×</button>
+
+        <div id="qualificadorForm">
+          <h3>Avaliação de aderência ao escopo</h3>
+          <p class="modal__subtitle">Responda para verificar se há compatibilidade técnica</p>
+
+          <div class="form-step" data-step="1">
+            <label>1. Você é:</label>
+            <div class="options">
+              <button type="button" class="option-btn" data-value="3" data-next="2">Advogado/Escritório</button>
+              <button type="button" class="option-btn" data-value="2" data-next="2">Empresa</button>
+              <button type="button" class="option-btn" data-value="1" data-next="2">Parte em processo</button>
+              <button type="button" class="option-btn" data-value="0" data-next="2">Outro</button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="2" style="display: none;">
+            <label>2. Área do direito:</label>
+            <div class="options">
+              <button type="button" class="option-btn" data-value="3" data-next="3">Trabalhista</button>
+              <button type="button" class="option-btn" data-value="3" data-next="3">Cível/Contratos</button>
+              <button type="button" class="option-btn" data-value="2" data-next="3">Criminal</button>
+              <button type="button" class="option-btn" data-value="1" data-next="3">Outro</button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="3" style="display: none;">
+            <label>3. Tipo de demanda:</label>
+            <div class="options">
+              <button type="button" class="option-btn" data-value="3" data-next="4">Perícia judicial</button>
+              <button type="button" class="option-btn" data-value="3" data-next="4">Assistência técnica</button>
+              <button type="button" class="option-btn" data-value="2" data-next="4">Laudo/Parecer</button>
+              <button type="button" class="option-btn" data-value="1" data-next="4">Dúvida inicial</button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="4" style="display: none;">
+            <label>4. Urgência:</label>
+            <div class="options">
+              <button type="button" class="option-btn" data-value="3" data-next="5">Imediata</button>
+              <button type="button" class="option-btn" data-value="2" data-next="5">30 dias</button>
+              <button type="button" class="option-btn" data-value="1" data-next="5">60+ dias</button>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="5" style="display: none;">
+            <label>5. Valor estimado da causa:</label>
+            <div class="options">
+              <button type="button" class="option-btn" data-value="1" data-next="result">Até R$ 100k</button>
+              <button type="button" class="option-btn" data-value="2" data-next="result">R$ 100k-500k</button>
+              <button type="button" class="option-btn" data-value="3" data-next="result">Acima de R$ 500k</button>
+              <button type="button" class="option-btn" data-value="2" data-next="result">Não se aplica</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="qualificadorResult" style="display: none;">
+          <div id="resultAprovado" style="display: none;">
+            <div class="result-icon">✓</div>
+            <h3>Há aderência ao escopo</h3>
+            <p>Com base nas respostas, sua demanda está dentro da área de atuação. Clique abaixo para iniciar conversa pelo WhatsApp com o contexto pré-preenchido.</p>
+            <a id="whatsappLink" class="btn btn--primary" href="#" target="_blank" rel="noopener noreferrer">
+              Falar no WhatsApp
+            </a>
+          </div>
+
+          <div id="resultReprovado" style="display: none;">
+            <div class="result-icon">!</div>
+            <h3>Fora do escopo atual</h3>
+            <p>Com base nas respostas, não há aderência técnica às áreas de atuação (SST ou Computação Forense). Posso indicar profissionais adequados se desejar.</p>
+            <a class="btn btn--secondary" href="mailto:contato@clovisribeiro.com?subject=Indicação%20-%20Fora%20do%20escopo">
+              Solicitar indicação por e-mail
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(4px);
+      }
+
+      .modal__content {
+        position: relative;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 32px;
+        max-width: 480px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        z-index: 1001;
+      }
+
+      .modal__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: #888;
+        font-size: 24px;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.2s;
+      }
+
+      .modal__close:hover {
+        background: #333;
+        color: #fff;
+      }
+
+      .modal h3 {
+        margin: 0 0 8px 0;
+        font-size: 20px;
+        color: #fff;
+      }
+
+      .modal__subtitle {
+        margin: 0 0 24px 0;
+        color: #888;
+        font-size: 14px;
+      }
+
+      .form-step label {
+        display: block;
+        margin-bottom: 16px;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .option-btn {
+        background: #252525;
+        border: 1px solid #333;
+        color: #e0e0e0;
+        padding: 14px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: left;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+
+      .option-btn:hover {
+        background: #333;
+        border-color: #555;
+      }
+
+      .option-btn:active {
+        transform: scale(0.98);
+      }
+
+      .result-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin: 0 auto 16px;
+      }
+
+      #resultAprovado .result-icon {
+        background: #065f46;
+        color: #34d399;
+      }
+
+      #resultReprovado .result-icon {
+        background: #7c2d12;
+        color: #fb923c;
+      }
+
+      #qualificadorResult h3 {
+        text-align: center;
+      }
+
+      #qualificadorResult p {
+        text-align: center;
+        color: #888;
+        margin-bottom: 24px;
+        line-height: 1.6;
+      }
+
+      #qualificadorResult .btn {
+        width: 100%;
+        text-align: center;
+      }
+    </style>
   </main>
 
   <footer class="footer">
@@ -285,6 +512,73 @@
 
   
   <script>
+    let pontuacao = 0;
+    let respostas = {};
+
+    function openQualificador() {
+      document.getElementById('qualificadorModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      resetQualificador();
+    }
+
+    function closeQualificador() {
+      document.getElementById('qualificadorModal').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function resetQualificador() {
+      pontuacao = 0;
+      respostas = {};
+      document.querySelectorAll('.form-step').forEach(step => {
+        step.style.display = step.dataset.step === '1' ? 'block' : 'none';
+      });
+      document.getElementById('qualificadorForm').style.display = 'block';
+      document.getElementById('qualificadorResult').style.display = 'none';
+      document.getElementById('resultAprovado').style.display = 'none';
+      document.getElementById('resultReprovado').style.display = 'none';
+    }
+
+    document.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const valor = parseInt(this.dataset.value, 10);
+        const nextStep = this.dataset.next;
+
+        pontuacao += valor;
+
+        if (nextStep === 'result') {
+          mostrarResultado();
+        } else {
+          document.querySelectorAll('.form-step').forEach(step => {
+            step.style.display = 'none';
+          });
+          document.querySelector(`[data-step="${nextStep}"]`).style.display = 'block';
+        }
+      });
+    });
+
+    function mostrarResultado() {
+      document.getElementById('qualificadorForm').style.display = 'none';
+      document.getElementById('qualificadorResult').style.display = 'block';
+
+      if (pontuacao >= 10) {
+        document.getElementById('resultAprovado').style.display = 'block';
+        document.getElementById('resultReprovado').style.display = 'none';
+
+        const texto = `Olá, Clóvis. Gostaria de avaliar uma demanda técnica. Perfil: ${pontuacao} pontos no pré-qualificador.`;
+        const link = `https://wa.me/5591992879843?text=${encodeURIComponent(texto)}`;
+        document.getElementById('whatsappLink').href = link;
+      } else {
+        document.getElementById('resultAprovado').style.display = 'none';
+        document.getElementById('resultReprovado').style.display = 'block';
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeQualificador();
+      }
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const mobileToggle = document.getElementById('mobileMenuToggle');
