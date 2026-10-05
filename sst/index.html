@@ -364,7 +364,7 @@
       const resumo = document.getElementById('sst-resumo').value;
       const msg = `*Assistência Técnica em SST - Clóvis Ribeiro*\n\n*Nome / Escritório:* ${nome}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n*Tema:* ${tipo}\n*Resumo e prazo:* ${resumo}`;
 
-      trackEvent('contact_form_submit', { method: 'whatsapp', service: 'sst', tipo_processo: tipo });
+      trackEvent('whatsapp_click', { source: 'sst_contact_form', service: 'sst', demand_topic: tipo });
       window.open(`https://wa.me/5591992879843?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
 
       setTimeout(() => {
