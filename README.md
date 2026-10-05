@@ -42,7 +42,9 @@ A página principal apresenta as duas formações de engenharia e encaminha o vi
 
 ## Integridade do funil
 
-Os formulários não registram lead por simples abertura do WhatsApp. Eles preparam a mensagem e somente registram intenção de contato. O envio efetivo depende de confirmação do usuário no WhatsApp.
+O pré-qualificador da página inicial usa regras de aderência às áreas técnicas, sem pontuação por valor da causa, urgência ou perfil comercial. As respostas servem para classificar a demanda como aderente, sujeita a revisão ou sem aderência identificada pelo pré-filtro, e o contexto selecionado é levado para a mensagem preparada no WhatsApp.
+
+Os formulários das verticais não registram lead por simples preenchimento. Eles preparam a mensagem para o WhatsApp, e o envio efetivo depende de confirmação do usuário no aplicativo. Os eventos de analytics, quando ativados, devem distinguir intenção/clique no WhatsApp de lead qualificado, proposta e contratação.
 
 ## Performance, acessibilidade e segurança
 
