@@ -22,7 +22,7 @@ def parse_errors(text):
     return Counter((code, str(data)) for _, code, data in parser.errors)
 
 checks = []
-for page, area, values in [('sst/index.html', 'sst', ['1','3']), ('computacao-forense/index.html', 'computacao-forense', ['2','3'])]:
+for page, area, primary in [('sst/index.html', 'sst', '1'), ('computacao-forense/index.html', 'computacao-forense', '2')]:
     text = (ROOT / page).read_text()
     old = original(page).decode()
     assert not (parse_errors(text) - parse_errors(old)), (page, 'New HTML5 parse errors')
@@ -47,8 +47,13 @@ for page, area, values in [('sst/index.html', 'sst', ['1','3']), ('computacao-fo
     assert fields['html_type'].get('value') == 'simple'
     assert fields['locale'].get('value') == 'pt'
     assert 'ORIGEM_PAGINA' not in fields and 'ESTAGIO_FUNIL' not in fields
-    assert form.xpath('.//input[@name="INTERESSE_AREA"]/@value') == values
-    assert not form.xpath('.//input[@name="INTERESSE_AREA"][@checked]')
+    interest, = form.xpath('.//input[@name="INTERESSE_AREA"]')
+    assert interest.get('type') == 'hidden' and interest.get('value') == primary
+    assert form.get('data-primary-interest') == primary
+    secondary, = form.xpath('.//input[@data-add-secondary-guide]')
+    assert secondary.get('type') == 'checkbox'
+    assert secondary.get('name') is None and secondary.get('required') is None and secondary.get('checked') is None
+    assert not form.xpath('.//input[@type="radio"][@name="INTERESSE_AREA"]')
     assert form.xpath('.//select[@name="PERFIL"]/option[@value!=""]/@value') == ['1','2','3','4']
     assert [e.text.strip() for e in form.xpath('.//select[@name="PERFIL"]/option[@value!=""]')] == ['Advogado / Escritório','Empresa','Parte','Outro']
     for e in form.xpath('.//input[not(@type="hidden")] | .//select'):
@@ -57,6 +62,8 @@ for page, area, values in [('sst/index.html', 'sst', ['1','3']), ('computacao-fo
         for ident in (e.get('aria-describedby') or e.get('aria-labelledby') or e.get('aria-controls')).split():
             assert ident in ids, (page, ident)
     baseline = html.fromstring(old)
+    baseline_material, = baseline.xpath('//form[@data-brevo-material]') if baseline.xpath('//form[@data-brevo-material]') else (form,)
+    assert form.get('action') == baseline_material.get('action'), 'Brevo endpoint changed'
     old_form_id = 'sst-contact-form' if area == 'sst' else 'ti-contact-form'
     assert etree.tostring(doc.get_element_by_id(old_form_id)) == etree.tostring(baseline.get_element_by_id(old_form_id)), 'WhatsApp form changed'
     assert doc.xpath('//link[@rel="canonical"]/@href') == baseline.xpath('//link[@rel="canonical"]/@href')
@@ -76,9 +83,10 @@ for page, area, values in [('sst/index.html', 'sst', ['1','3']), ('computacao-fo
         content = script.text or ''
         if script.get('type') == 'application/ld+json': json.loads(content)
         else:
-            with tempfile.NamedTemporaryFile(mode='w',suffix='.js') as temp:
-                temp.write(content); temp.flush()
-                subprocess.run(['node','--check',temp.name],check=True,capture_output=True)
+            with tempfile.TemporaryDirectory() as temp_dir:
+                temp = Path(temp_dir) / 'inline.js'
+                temp.write_text(content, encoding='utf-8')
+                subprocess.run(['node','--check',str(temp)],check=True,capture_output=True)
     assert not re.search(r'localStorage|sessionStorage|generate_lead',text)
     checks.append(page + ': HTML5 sem novos erros; IDs/labels/caminhos/JS/WhatsApp/canonical OK')
 
@@ -100,6 +108,7 @@ privacy = (ROOT/'privacidade.html').read_text()
 assert not (parse_errors(privacy) - parse_errors(original('privacidade.html').decode()))
 for phrase in ['Brevo','double opt-in','facultativa','mensuração','correção','exclusão','não constituem contratação']: assert phrase in privacy
 subprocess.run(['node','tests/brevo-tracking.test.cjs'],cwd=ROOT,check=True)
+subprocess.run(['node','tests/brevo-interest.test.cjs'],cwd=ROOT,check=True)
 subprocess.run(['git','diff','--check'],cwd=ROOT,check=True)
 for message in checks: print('PASS:',message)
 print('PASS: CSS, CSP, hardening, privacidade, arquivos preservados e hashes PDF.')

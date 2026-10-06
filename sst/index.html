@@ -267,18 +267,19 @@
           <h2 class="section-title" id="material-sst-titulo">Guia Técnico de SST para Prova Pericial</h2>
           <p class="section-subtitle">Receba gratuitamente um material técnico sobre análise pericial em Segurança do Trabalho, quesitos, consistência documental e pontos de atenção em demandas trabalhistas.</p>
           <p>Informe seu e-mail e confirme o endereço pelo link que será enviado. O material será disponibilizado após a confirmação. Solicitar o guia não inicia uma contratação.</p>
-          <p>As comunicações futuras são opcionais. Você pode receber o guia sem marcar essa opção.</p>
+          <p>Você receberá o guia desta página e, se marcar a opção adicional, também o guia da outra área. Essa escolha não ativa comunicações futuras, que dependem exclusivamente do consentimento opcional abaixo.</p>
         </div>
         <!-- Adaptado do HTML simples oficial da Brevo: mesmo endpoint, nomes e IDs de categoria. -->
-        <form class="material-form" id="material-sst-form" method="post" action="https://4ec81289.sibforms.com/serve/MUIFAOwWDMB8vRQGn9WtjSxUm6EUFcbjET4gan70Q4qcxM9r6oZAHrt7D-eStSBAslpeXQF0L4BVBXAGYNvK4_6ze7QQ_8iFl7Eeh_FF_V_p3v2EJLJ85Q48gKZ6x1ACEUOtIWmGVe6AgX0AjxdZH8DP6fOcp-UJKBnz8c5NRIQgIu1WgDSS3SoE8_c9x-u57SsNf78KWRaESapcUQ==" aria-labelledby="material-sst-titulo" aria-describedby="material-sst-nota" data-brevo-material>
+        <form class="material-form" id="material-sst-form" method="post" action="https://4ec81289.sibforms.com/serve/MUIFAOwWDMB8vRQGn9WtjSxUm6EUFcbjET4gan70Q4qcxM9r6oZAHrt7D-eStSBAslpeXQF0L4BVBXAGYNvK4_6ze7QQ_8iFl7Eeh_FF_V_p3v2EJLJ85Q48gKZ6x1ACEUOtIWmGVe6AgX0AjxdZH8DP6fOcp-UJKBnz8c5NRIQgIu1WgDSS3SoE8_c9x-u57SsNf78KWRaESapcUQ==" aria-labelledby="material-sst-titulo" aria-describedby="material-sst-nota" data-brevo-material data-primary-interest="1">
           <p class="form-note">Campos identificados com * são obrigatórios.</p>
           <div class="form-group"><label for="material-sst-nome">Nome *</label><input type="text" id="material-sst-nome" name="NOME" maxlength="200" autocomplete="name" required></div>
           <div class="form-group"><label for="material-sst-email">E-mail *</label><input type="email" id="material-sst-email" name="EMAIL" autocomplete="email" required></div>
           <div class="form-group"><label for="material-sst-perfil">Perfil *</label><select id="material-sst-perfil" name="PERFIL" required><option value="" selected disabled>Selecione seu perfil</option><option value="1">Advogado / Escritório</option><option value="2">Empresa</option><option value="3">Parte</option><option value="4">Outro</option></select></div>
-          <fieldset class="material-choices"><legend>Área de interesse *</legend>
-            <label for="material-sst-area"><input id="material-sst-area" type="radio" name="INTERESSE_AREA" value="1" required> Segurança do Trabalho</label>
-            <label for="material-sst-ambos"><input id="material-sst-ambos" type="radio" name="INTERESSE_AREA" value="3" required> Ambas as áreas</label>
-          </fieldset>
+          <input type="hidden" name="INTERESSE_AREA" value="1">
+          <div class="material-consent">
+            <input type="checkbox" id="material-sst-guia-adicional" data-add-secondary-guide>
+            <label for="material-sst-guia-adicional">Desejo também receber o guia de Computação Forense.</label>
+          </div>
           <div class="material-consent">
             <input type="checkbox" id="material-sst-entrega" name="CONSENTIMENTO_ENTREGA" value="1" required aria-describedby="material-sst-privacidade">
             <label for="material-sst-entrega">Confirmo que desejo receber o material técnico solicitado no e-mail informado. Entendo que meus dados serão utilizados exclusivamente para esta entrega e registro de acesso, conforme descrito no Aviso de Privacidade. *</label>

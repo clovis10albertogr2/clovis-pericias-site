@@ -7,9 +7,14 @@ const script = fs.readFileSync(path.join(__dirname, '../assets/brevo-material.js
 function run(url) {
   const fields = [], handlers = {};
   const form = {
+    dataset: {},
+    querySelector() { return null; },
     appendChild(field) { fields.push(field); },
     querySelectorAll() { return fields.map(field => ({ remove() { fields.splice(fields.indexOf(field), 1); } })); },
-    addEventListener(name, handler) { handlers[name] = handler; }
+    addEventListener(name, handler) {
+      const previous = handlers[name];
+      handlers[name] = (...args) => { if (previous) previous(...args); handler(...args); };
+    }
   };
   const window = { location: { href: url } };
   vm.runInNewContext(script, { URL, window, document: {

@@ -255,18 +255,19 @@
           <h2 class="section-title" id="material-computacao-forense-titulo">Guia Técnico de Perícia Digital para Prova Técnica</h2>
           <p class="section-subtitle">Receba gratuitamente um material técnico sobre integridade, preservação e autenticidade de evidências digitais, metadados, rastreabilidade, limitações técnicas e análise pericial.</p>
           <p>Informe seu e-mail e confirme o endereço pelo link que será enviado. O material será disponibilizado após a confirmação. Solicitar o guia não inicia uma contratação.</p>
-          <p>As comunicações futuras são opcionais. Você pode receber o guia sem marcar essa opção.</p>
+          <p>Você receberá o guia desta página e, se marcar a opção adicional, também o guia da outra área. Essa escolha não ativa comunicações futuras, que dependem exclusivamente do consentimento opcional abaixo.</p>
         </div>
         <!-- Adaptado do HTML simples oficial da Brevo: mesmo endpoint, nomes e IDs de categoria. -->
-        <form class="material-form" id="material-computacao-forense-form" method="post" action="https://4ec81289.sibforms.com/serve/MUIFAJ8TENDs7Ipe88Qt-7aD5t4HZPJmOkILBiHeQZiouQUmfokGlZWJrkD_scusL92UZjLPa4yu2yA-zTquD2dOC22Mg0uJVLK5sY4ESCAVCGBw5wMRrQsskXjIDlEaDDrJZZ_qrNpdLRzr6eBwnEENzeQ_Et-YrvAc0sAOZgIEkgar5kRP1A2vuek2dEtveQ1OmOraqLsvMC9J2Q==" aria-labelledby="material-computacao-forense-titulo" aria-describedby="material-computacao-forense-nota" data-brevo-material>
+        <form class="material-form" id="material-computacao-forense-form" method="post" action="https://4ec81289.sibforms.com/serve/MUIFAJ8TENDs7Ipe88Qt-7aD5t4HZPJmOkILBiHeQZiouQUmfokGlZWJrkD_scusL92UZjLPa4yu2yA-zTquD2dOC22Mg0uJVLK5sY4ESCAVCGBw5wMRrQsskXjIDlEaDDrJZZ_qrNpdLRzr6eBwnEENzeQ_Et-YrvAc0sAOZgIEkgar5kRP1A2vuek2dEtveQ1OmOraqLsvMC9J2Q==" aria-labelledby="material-computacao-forense-titulo" aria-describedby="material-computacao-forense-nota" data-brevo-material data-primary-interest="2">
           <p class="form-note">Campos identificados com * são obrigatórios.</p>
           <div class="form-group"><label for="material-computacao-forense-nome">Nome *</label><input type="text" id="material-computacao-forense-nome" name="NOME" maxlength="200" autocomplete="name" required></div>
           <div class="form-group"><label for="material-computacao-forense-email">E-mail *</label><input type="email" id="material-computacao-forense-email" name="EMAIL" autocomplete="email" required></div>
           <div class="form-group"><label for="material-computacao-forense-perfil">Perfil *</label><select id="material-computacao-forense-perfil" name="PERFIL" required><option value="" selected disabled>Selecione seu perfil</option><option value="1">Advogado / Escritório</option><option value="2">Empresa</option><option value="3">Parte</option><option value="4">Outro</option></select></div>
-          <fieldset class="material-choices"><legend>Área de interesse *</legend>
-            <label for="material-computacao-forense-area"><input id="material-computacao-forense-area" type="radio" name="INTERESSE_AREA" value="2" required> Computação Forense</label>
-            <label for="material-computacao-forense-ambos"><input id="material-computacao-forense-ambos" type="radio" name="INTERESSE_AREA" value="3" required> Ambas as áreas</label>
-          </fieldset>
+          <input type="hidden" name="INTERESSE_AREA" value="2">
+          <div class="material-consent">
+            <input type="checkbox" id="material-computacao-forense-guia-adicional" data-add-secondary-guide>
+            <label for="material-computacao-forense-guia-adicional">Desejo também receber o guia de Segurança do Trabalho.</label>
+          </div>
           <div class="material-consent">
             <input type="checkbox" id="material-computacao-forense-entrega" name="CONSENTIMENTO_ENTREGA" value="1" required aria-describedby="material-computacao-forense-privacidade">
             <label for="material-computacao-forense-entrega">Confirmo que desejo receber o material técnico solicitado no e-mail informado. Entendo que meus dados serão utilizados exclusivamente para esta entrega e registro de acesso, conforme descrito no Aviso de Privacidade. *</label>

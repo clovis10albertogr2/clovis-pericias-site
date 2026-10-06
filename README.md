@@ -66,7 +66,7 @@ HTML5, CSS3 e JavaScript sem framework ou etapa de build.
 As verticais possuem uma captura inicial de material técnico, separada da triagem pelo WhatsApp. Os formulários adaptam o **HTML simples oficial** da Brevo: POST nativo ao endpoint do formulário existente, locale=pt, html_type=simple e campo antispam nativo. Não há banco próprio, API key pública, formulário simulado ou envio AJAX customizado. A resposta de envio vem da Brevo; a interface local não declara sucesso antecipadamente.
 
 - Perfil: valores de categoria 1–4 preservados; somente os textos visíveis foram adaptados.
-- Área: SST=1, FORENSE=2 e AMBOS=3, conforme exportação da conta. SST permite 1/3; Forense permite 2/3.
+- Materiais: um único hidden INTERESSE_AREA assume SST=1 ou FORENSE=2 pela página. O checkbox opcional de guia adicional muda para AMBOS=3; desmarcar restaura a área principal. Sem JavaScript, o hidden mantém o guia da página. Essa escolha não é consentimento de marketing: CONSENTIMENTO_ENTREGA obrigatório e OPT_IN opcional permanecem independentes.
 - Entrega obrigatória e OPT_IN opcional: ambos desmarcados inicialmente. Não há inscrição automática em campanhas/nutrição.
 - DOI e entrega final continuam sob os formulários existentes da Brevo; não são reimplementados no site.
 - HTML simples não possui as mensagens AJAX nem as páginas de confirmação padrão dependentes de JavaScript. O retorno real precisa ser conferido antes de aprovar a integração.

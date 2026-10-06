@@ -9,6 +9,21 @@
   };
 
   document.querySelectorAll('form[data-brevo-material]').forEach(form => {
+    const primaryInterest = form.dataset.primaryInterest;
+    const interest = form.querySelector('input[name="INTERESSE_AREA"]');
+    const secondaryGuide = form.querySelector('[data-add-secondary-guide]');
+    const refreshInterest = () => {
+      if (interest && secondaryGuide && ['1', '2'].includes(primaryInterest)) {
+        interest.value = secondaryGuide.checked ? '3' : primaryInterest;
+      }
+    };
+    refreshInterest();
+    if (secondaryGuide) secondaryGuide.addEventListener('change', refreshInterest);
+    form.addEventListener('reset', () => {
+      // O reset nativo termina após o evento; sincronizar então o estado restaurado.
+      queueMicrotask(refreshInterest);
+    });
+    form.addEventListener('submit', refreshInterest);
     const addField = (name, value) => {
       const field = document.createElement('input');
       field.type = 'hidden';
