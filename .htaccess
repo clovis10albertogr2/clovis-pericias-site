@@ -9,6 +9,9 @@ RewriteEngine On
 # Bloquear metadados internos do repositório no webroot
 RewriteRule (^|/)\.(git|github)(/|$) - [F,L,NC]
 
+# Arquivos de auditoria não fazem parte da interface pública
+RewriteRule ^tests(/|$) - [F,L,NC]
+
 # Resolver diretórios das verticais para seus respectivos index.html
 DirectoryIndex index.html
 
@@ -80,7 +83,7 @@ RewriteRule ^(.*)$ https://clovisribeiro.com/$1 [R=301,L]
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   
   # Content Security Policy (CSP)
-  Header always set Content-Security-Policy "default-src 'self' https:; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'self';"
+  Header always set Content-Security-Policy "default-src 'self' https:; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'self'; form-action 'self' https://4ec81289.sibforms.com;"
   
   # Permissions Policy (Feature Policy)
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
