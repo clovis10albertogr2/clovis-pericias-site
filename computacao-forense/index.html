@@ -51,6 +51,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
+  <script defer src="../assets/brevo-material.js"></script>
   
   <script>
     const GA4_ID = "";
@@ -104,6 +105,7 @@
         <a href="#servicos">Serviços</a>
         <a href="#quando-contratar">Quando contratar</a>
         <a href="#metodo">Método</a>
+        <a href="#material-tecnico">Guia gratuito</a>
         <a href="../sst/">SST</a>
         <a href="#contato" class="nav__cta">Solicitar avaliação</a>
       </nav>
@@ -243,6 +245,43 @@
           <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-3"><span class="faq-question">É possível analisar assinatura eletrônica e biometria facial?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="ti-faq-3"><p>Podem ser analisados os registros, fluxos, metadados e mecanismos técnicos apresentados como evidência. A conclusão depende da documentação disponível e não pressupõe que um mecanismo seja válido, inválido, seguro ou fraudulento antes da análise.</p></div></article>
           <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="ti-faq-4"><span class="faq-question">O serviço substitui a estratégia jurídica?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="ti-faq-4"><p>Não. O trabalho é técnico de engenharia. O parecer e os esclarecimentos subsidiam o advogado, que permanece responsável pela interpretação jurídica e pela condução do processo.</p></div></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section material-section" id="material-tecnico" aria-labelledby="material-computacao-forense-titulo">
+      <div class="container material-grid">
+        <div>
+          <p class="kicker">Material técnico gratuito</p>
+          <h2 class="section-title" id="material-computacao-forense-titulo">Guia Técnico de Perícia Digital para Prova Técnica</h2>
+          <p class="section-subtitle">Receba gratuitamente um material técnico sobre integridade, preservação e autenticidade de evidências digitais, metadados, rastreabilidade, limitações técnicas e análise pericial.</p>
+          <p>Informe seu e-mail e confirme o endereço pelo link que será enviado. O material será disponibilizado após a confirmação. Solicitar o guia não inicia uma contratação.</p>
+          <p>As comunicações futuras são opcionais. Você pode receber o guia sem marcar essa opção.</p>
+        </div>
+        <!-- Adaptado do HTML simples oficial da Brevo: mesmo endpoint, nomes e IDs de categoria. -->
+        <form class="material-form" id="material-computacao-forense-form" method="post" action="https://4ec81289.sibforms.com/serve/MUIFAJ8TENDs7Ipe88Qt-7aD5t4HZPJmOkILBiHeQZiouQUmfokGlZWJrkD_scusL92UZjLPa4yu2yA-zTquD2dOC22Mg0uJVLK5sY4ESCAVCGBw5wMRrQsskXjIDlEaDDrJZZ_qrNpdLRzr6eBwnEENzeQ_Et-YrvAc0sAOZgIEkgar5kRP1A2vuek2dEtveQ1OmOraqLsvMC9J2Q==" aria-labelledby="material-computacao-forense-titulo" aria-describedby="material-computacao-forense-nota" data-brevo-material>
+          <p class="form-note">Campos identificados com * são obrigatórios.</p>
+          <div class="form-group"><label for="material-computacao-forense-nome">Nome *</label><input type="text" id="material-computacao-forense-nome" name="NOME" maxlength="200" autocomplete="name" required></div>
+          <div class="form-group"><label for="material-computacao-forense-email">E-mail *</label><input type="email" id="material-computacao-forense-email" name="EMAIL" autocomplete="email" required></div>
+          <div class="form-group"><label for="material-computacao-forense-perfil">Perfil *</label><select id="material-computacao-forense-perfil" name="PERFIL" required><option value="" selected disabled>Selecione seu perfil</option><option value="1">Advogado / Escritório</option><option value="2">Empresa</option><option value="3">Parte</option><option value="4">Outro</option></select></div>
+          <fieldset class="material-choices"><legend>Área de interesse *</legend>
+            <label for="material-computacao-forense-area"><input id="material-computacao-forense-area" type="radio" name="INTERESSE_AREA" value="2" required> Computação Forense</label>
+            <label for="material-computacao-forense-ambos"><input id="material-computacao-forense-ambos" type="radio" name="INTERESSE_AREA" value="3" required> Ambas as áreas</label>
+          </fieldset>
+          <div class="material-consent">
+            <input type="checkbox" id="material-computacao-forense-entrega" name="CONSENTIMENTO_ENTREGA" value="1" required aria-describedby="material-computacao-forense-privacidade">
+            <label for="material-computacao-forense-entrega">Confirmo que desejo receber o material técnico solicitado no e-mail informado. Entendo que meus dados serão utilizados exclusivamente para esta entrega e registro de acesso, conforme descrito no Aviso de Privacidade. *</label>
+          </div>
+          <p class="form-note" id="material-computacao-forense-privacidade"><a href="../privacidade.html" target="_blank" rel="noopener noreferrer">Leia o Aviso de Privacidade (abre em nova aba)</a>.</p>
+          <div class="material-consent">
+            <input type="checkbox" id="material-computacao-forense-optin" name="OPT_IN" value="1">
+            <label for="material-computacao-forense-optin">Desejo receber comunicações técnicas ocasionais sobre engenharia aplicada à prova pericial. Posso cancelar a qualquer momento. (Opcional)</label>
+          </div>
+          <div class="material-honeypot" aria-hidden="true"><label for="material-computacao-forense-verificacao">Deixe este campo vazio</label><input type="text" id="material-computacao-forense-verificacao" name="email_address_check" value="" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="locale" value="pt">
+          <input type="hidden" name="html_type" value="simple">
+          <button type="submit" class="btn btn--primary btn--full">Solicitar material técnico</button>
+          <p class="form-note" id="material-computacao-forense-nota">Parâmetros de origem presentes no endereço podem acompanhar o pedido para mensuração. Ao enviar, você seguirá para a resposta da Brevo. Aguarde a confirmação da solicitação nessa página. Nenhum material é entregue antes de confirmar seu e-mail. Se houver falha, a solicitação não deve ser considerada concluída.</p>
+        </form>
       </div>
     </section>
 

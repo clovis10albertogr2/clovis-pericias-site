@@ -51,6 +51,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css" />
+  <script defer src="../assets/brevo-material.js"></script>
   
   <script>
     const GA4_ID = "";
@@ -104,6 +105,7 @@
         <a href="#servicos">Serviços</a>
         <a href="#quando-contratar">Quando contratar</a>
         <a href="#metodo">Método</a>
+        <a href="#material-tecnico">Guia gratuito</a>
         <a href="../computacao-forense/">Computação Forense</a>
         <a href="#contato" class="nav__cta">Solicitar avaliação</a>
       </nav>
@@ -255,6 +257,43 @@
           <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-3"><span class="faq-question">Você define a estratégia jurídica do processo?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="sst-faq-3"><p>Não. O trabalho é de natureza técnica de engenharia. Os resultados fornecem subsídios ao advogado, que permanece responsável pela estratégia jurídica e pela condução processual.</p></div></article>
           <article class="faq-item"><button class="faq-trigger" aria-expanded="false" aria-controls="sst-faq-4"><span class="faq-question">A análise de doença ocupacional substitui avaliação médica?</span><span class="faq-toggle" aria-hidden="true">+</span></button><div class="faq-content" id="sst-faq-4"><p>Não. A Engenharia de Segurança do Trabalho pode examinar fatores ocupacionais, ergonomia e condições de trabalho. Questões médicas exigem o profissional habilitado correspondente.</p></div></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section material-section" id="material-tecnico" aria-labelledby="material-sst-titulo">
+      <div class="container material-grid">
+        <div>
+          <p class="kicker">Material técnico gratuito</p>
+          <h2 class="section-title" id="material-sst-titulo">Guia Técnico de SST para Prova Pericial</h2>
+          <p class="section-subtitle">Receba gratuitamente um material técnico sobre análise pericial em Segurança do Trabalho, quesitos, consistência documental e pontos de atenção em demandas trabalhistas.</p>
+          <p>Informe seu e-mail e confirme o endereço pelo link que será enviado. O material será disponibilizado após a confirmação. Solicitar o guia não inicia uma contratação.</p>
+          <p>As comunicações futuras são opcionais. Você pode receber o guia sem marcar essa opção.</p>
+        </div>
+        <!-- Adaptado do HTML simples oficial da Brevo: mesmo endpoint, nomes e IDs de categoria. -->
+        <form class="material-form" id="material-sst-form" method="post" action="https://4ec81289.sibforms.com/serve/MUIFAOwWDMB8vRQGn9WtjSxUm6EUFcbjET4gan70Q4qcxM9r6oZAHrt7D-eStSBAslpeXQF0L4BVBXAGYNvK4_6ze7QQ_8iFl7Eeh_FF_V_p3v2EJLJ85Q48gKZ6x1ACEUOtIWmGVe6AgX0AjxdZH8DP6fOcp-UJKBnz8c5NRIQgIu1WgDSS3SoE8_c9x-u57SsNf78KWRaESapcUQ==" aria-labelledby="material-sst-titulo" aria-describedby="material-sst-nota" data-brevo-material>
+          <p class="form-note">Campos identificados com * são obrigatórios.</p>
+          <div class="form-group"><label for="material-sst-nome">Nome *</label><input type="text" id="material-sst-nome" name="NOME" maxlength="200" autocomplete="name" required></div>
+          <div class="form-group"><label for="material-sst-email">E-mail *</label><input type="email" id="material-sst-email" name="EMAIL" autocomplete="email" required></div>
+          <div class="form-group"><label for="material-sst-perfil">Perfil *</label><select id="material-sst-perfil" name="PERFIL" required><option value="" selected disabled>Selecione seu perfil</option><option value="1">Advogado / Escritório</option><option value="2">Empresa</option><option value="3">Parte</option><option value="4">Outro</option></select></div>
+          <fieldset class="material-choices"><legend>Área de interesse *</legend>
+            <label for="material-sst-area"><input id="material-sst-area" type="radio" name="INTERESSE_AREA" value="1" required> Segurança do Trabalho</label>
+            <label for="material-sst-ambos"><input id="material-sst-ambos" type="radio" name="INTERESSE_AREA" value="3" required> Ambas as áreas</label>
+          </fieldset>
+          <div class="material-consent">
+            <input type="checkbox" id="material-sst-entrega" name="CONSENTIMENTO_ENTREGA" value="1" required aria-describedby="material-sst-privacidade">
+            <label for="material-sst-entrega">Confirmo que desejo receber o material técnico solicitado no e-mail informado. Entendo que meus dados serão utilizados exclusivamente para esta entrega e registro de acesso, conforme descrito no Aviso de Privacidade. *</label>
+          </div>
+          <p class="form-note" id="material-sst-privacidade"><a href="../privacidade.html" target="_blank" rel="noopener noreferrer">Leia o Aviso de Privacidade (abre em nova aba)</a>.</p>
+          <div class="material-consent">
+            <input type="checkbox" id="material-sst-optin" name="OPT_IN" value="1">
+            <label for="material-sst-optin">Desejo receber comunicações técnicas ocasionais sobre engenharia aplicada à prova pericial. Posso cancelar a qualquer momento. (Opcional)</label>
+          </div>
+          <div class="material-honeypot" aria-hidden="true"><label for="material-sst-verificacao">Deixe este campo vazio</label><input type="text" id="material-sst-verificacao" name="email_address_check" value="" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="locale" value="pt">
+          <input type="hidden" name="html_type" value="simple">
+          <button type="submit" class="btn btn--primary btn--full">Solicitar material técnico</button>
+          <p class="form-note" id="material-sst-nota">Parâmetros de origem presentes no endereço podem acompanhar o pedido para mensuração. Ao enviar, você seguirá para a resposta da Brevo. Aguarde a confirmação da solicitação nessa página. Nenhum material é entregue antes de confirmar seu e-mail. Se houver falha, a solicitação não deve ser considerada concluída.</p>
+        </form>
       </div>
     </section>
 
